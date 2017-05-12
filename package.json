@@ -1,0 +1,27 @@
+{
+  "name": "Heavy-Petting",
+  "version": "1.0.0",
+  "description": "An app that allows you to peruse pets for adoption and save your favorites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pmookerjee/Heavy-Petting.git"
+  },
+  "keywords": [],
+  "author": "Paula Mookerjee, James Billard, Sidney Gordon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pmookerjee/Heavy-Petting/issues"
+  },
+  "homepage": "https://github.com/Pmookerjee/Heavy-Petting#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "live-server": "^1.2.0",
+    "page": "^1.7.1",
+    "pg": "^6.1.5"
+  }
+}
