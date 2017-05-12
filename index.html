@@ -9,6 +9,15 @@
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <title>Heavy Petting</title>
+
+  <script id="resultsTemplate" type="text/x-handlebars-template">
+    <h1>{{name}}</h1>
+    <img src="{{photo}}">
+    <p>Age: {{age}}</p>
+    <p>Animal Type: {{animal}}</p>
+
+  </script>
+
 </head>
 <body>
   <section class="wrapper">
@@ -25,14 +34,14 @@
 
   <section class="body">
 
-    <!-- <section class="getStart tab-content" id="getStart">
+    <section class="getStart tab-content" id="getStart">
     <form class="filterForm" action="index.html" method="post">
 
     Zip Code:<br>
     <input type="text" name="" placeholder="Zip Code">
     <input type="submit" name="" value="Get Your Pet On">
   </form>
-</section> -->
+</section>
 
 <section class="selectionPage tab-content" id="selectionPage">
   <button type="button" name="button">back</button>
@@ -51,6 +60,14 @@
     </div>
     <button type="button" name="button">My faves</button>
   </section>
+</section>
+
+<section class="results">
+
+  <section id="results">
+
+  </section>
+
 </section>
 
 
