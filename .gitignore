@@ -109,6 +109,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-githubToken.js
+window.key
+window.token
 .env
 # End of https://www.gitignore.io/api/node,macos,windows
