@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0197)http://10.7.1.209/block/restricted.html?fn=Default&fp=1&ip=172.30.67.30&ibip=10.7.1.214&ldu=1&re=0&bu=exchange.nativeads.com/user-sync&bc=Website%20contains%20prohibited%20Advertisements%20content. -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Page Restricted</title>
+<style>
+.text3 {
+	FONT-SIZE: 12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	text-decoration:none;
+}
+.menuTitle {
+	FONT-SIZE: 18px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#4B4C4D;
+	font-weight:bold;
+	text-decoration:none;
+}
+</style>
+<script language="JavaScript"> 
+<!--
+
+loginPage="user_login_small.html";
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	loginPage="mobileLogin";
+}
+
+function getParameter(name)
+{  
+	name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	var regexS = "[\\?&]"+name+"=([^&#]*)";  
+	var regex = new RegExp( regexS );  
+	var results = regex.exec( window.location.href );  
+	
+	if( results == null )    
+		return "";  
+	else    
+		return results[1];
+}
+
+function decode(encodedItem) 
+{
+	return decodeURIComponent(encodedItem.replace(/\+/g,  " "));
+}
+
+
+function displaySections()
+{
+	if(getParameter('ldu') == '1')
+	{
+		document.getElementById('loginDifferentUser').innerHTML = '<a href=\"javascript:openSessionInNewWindow();\" onClick=\"openSessionInNewWindow();this.blur();return false;\" class=\"button\"><img src=\"login.gif\" border=\"0\"></a>';
+	}
+	
+	if(getParameter('re') == '1')
+	{
+		document.getElementById('exception1').innerHTML = 'Request An Exception';
+		document.getElementById('exception2').innerHTML = 'Reason:';
+		document.getElementById('exception3').innerHTML = '<textarea id="rem2" name=\"rem2\" rows=\"3\" cols=\"40\"></textarea>';
+		document.getElementById('exception4').innerHTML = '<a href=\"javascript:requestOverride();\" class=\"button\" onClick=\"this.blur();\"><img src=\"exception.gif\" border=\"0\"></a>';
+		document.getElementById('exception5').innerHTML = 'Email:';
+		document.getElementById('exception6').innerHTML = '<input type=\"text\" name=\"rem3\" size=\"40\">';
+	}
+
+	document.getElementById('url').innerHTML = decode(getParameter('bu'));
+	document.getElementById('description').innerHTML = decode(getParameter('bc'));
+	document.getElementById('groupNumber').innerHTML = decode(getParameter('fp'));
+	document.getElementById('ipAddress').innerHTML = decode(getParameter('ip'));
+	document.getElementById('customText').innerHTML = decode(getParameter('ct'));
+}
+ 
+function requestOverride()
+{	
+	document.forms[0].fullUrl.value = decode(getParameter('bu'));
+	document.forms[0].button.value = 'requestException';
+	
+	if(document.getElementById("rem2"))
+	{
+		document.forms[0].rem.value = document.getElementById("rem2").value;
+	}
+	
+	if(document.getElementById("rem3"))
+	{
+		document.forms[0].contactEmail.value = document.getElementById("rem3").value;
+	}
+	
+	document.forms[0].gn.value = decode(getParameter('fp'));
+	document.forms[0].action = 'http://' + getParameter('ibip') + '/page_block_submit';
+	document.forms[0].submit();
+}
+function openSessionInNewWindow()
+{
+	var newWindow = window.open('http://' + getParameter('ibip') + '/' + loginPage,'iBossSessionWindow','toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, width=625, height=511');
+	newWindow.focus();
+	return false;
+} 
+
+// -->
+</script>
+</head>
+<body bgcolor="#2e7cba" topmargin="0" onload="javascript:displaySections();">
+<center>
+  <table cellpadding="0" cellspacing="0" width="700" bgcolor="#FFFFFF">
+    <tbody><tr>
+      <td><img src="./top.gif"></td>
+    </tr>
+    
+    <tr>
+      <td height="130" align="left"><table cellpadding="0" cellspacing="0" width="100%" align="left">
+          <tbody><tr>
+            <td colspan="100%" height="20"></td>
+          </tr>
+          <tr>
+                        <td colspan="100%"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                              <td width="3%" height="29"></td>
+                              <td width="94%" class="menuTitle" align="center">Page Blocked</td>
+                              <td width="3%"></td>
+                            </tr>
+                          </tbody></table></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+          <tr>
+                              <td width="5%">&nbsp;</td>
+                              <td width="90%" class="text3">Access to the requested site has been restricted  due to its contents.</td>
+                              <td width="5%">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td width="5%" height="40"></td>
+                              <td width="90%" class="text3"><span id="customText"></span></td>
+                              <td width="5%"></td>
+                            </tr>
+          <tr>
+            <td height="50" width="5%">&nbsp;</td>
+            <td class="text3" width="90%"><table class="text3" cellpadding="0" cellspacing="0" width="100%" align="left">
+                <tbody><tr>
+                  <td width="90%"><strong>URL/Content: </strong><span id="url">exchange.nativeads.com/user-sync</span></td>
+                  <td width="10%"></td>
+                </tr>
+                <tr>
+                  <td width="90%"><strong>Description: </strong><span id="description">Website contains prohibited Advertisements content.</span></td>
+                  <td width="10%"></td>
+                </tr>
+                <tr>
+                  <td width="90%"><strong>Group Number: </strong><span id="groupNumber">1</span></td>
+                  <td width="10%"></td>
+                </tr>
+                <tr>
+                  <td width="90%"><strong>Ip Address: </strong><span id="ipAddress">172.30.67.30</span></td>
+                  <td width="10%"></td>
+                </tr>
+              </tbody></table></td>
+            <td width="5%">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center" height="250" colspan="100%"><img src="./block.gif"></td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+    <tr>
+      <td><table width="100%" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td width="100%" align="center"><span id="loginDifferentUser"><a href="javascript:openSessionInNewWindow();" onclick="openSessionInNewWindow();this.blur();return false;" class="button"><img src="./login.gif" border="0"></a></span></td>
+          </tr>
+          <tr>
+            <td height="15" colspan="100%"></td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+    <form action="http://10.7.1.209/block/restricted.html?fn=Default&amp;fp=1&amp;ip=172.30.67.30&amp;ibip=10.7.1.214&amp;ldu=1&amp;re=0&amp;bu=exchange.nativeads.com/user-sync&amp;bc=Website%20contains%20prohibited%20Advertisements%20content." method="POST"></form>
+      <input type="hidden" name="button">
+                            <input type="hidden" name="fullUrl">
+                            <input type="hidden" name="rem">
+                            <input type="hidden" name="contactEmail">
+                            <input type="hidden" name="gn">
+      <tr>
+        <td><table width="100%" cellspacing="0" cellpadding="0">
+            <tbody><tr>
+              <td colspan="100%" height="10"></td>
+            </tr>
+            <tr>
+              <td width="8%"></td>
+              <td class="text3" colspan="13" id="exceptionColor"><strong><span id="exception1"></span></strong></td>
+              <td width="22%"></td>
+            </tr>
+            <tr>
+              <td colspan="100%" height="10"></td>
+            </tr>
+          </tbody></table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" cellspacing="0" cellpadding="0">
+      <tbody><tr>
+        <td width="20%"></td>
+        <td class="text3" width="10%"><strong><span id="exception5"></span></strong>&nbsp;</td>
+        <td class="text3" width="3%"></td>
+        <td width="32%" align="left"><span id="exception6"></span></td>
+        <td class="text3" width="5%"></td>
+        <td width="27%" valign="bottom"></td>
+        <td width="3%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="20%"></td>
+        <td class="text3" width="10%"><strong><span id="exception2"></span></strong>&nbsp;</td>
+        <td class="text3" width="3%"></td>
+        <td width="32%" align="left"><span id="exception3"></span></td>
+        <td class="text3" width="5%"></td>
+        <td width="27%" valign="bottom"><span id="exception4"></span></td>
+        <td width="3%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="15" colspan="100%"></td>
+      </tr>
+    </tbody></table></td>
+      </tr>
+    
+    <tr>
+      <td bgcolor="#fcc212" height="50">&nbsp;</td>
+    </tr>
+  </tbody></table>
+</center>
+
+
+</body></html>

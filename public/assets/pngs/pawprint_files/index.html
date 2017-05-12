@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://s0.2mdn.net/6527605/1491520594370/Chipotle_Brand_AdSoftware_300x600/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="ad.size" content="width=300, height=600">
+    <meta name="viewport" content="width=300, height=600">
+    <link rel="stylesheet" href="./chipotle_adSoftware_300x600.css">
+
+    <script type="text/javascript">
+        var clickTag = "http://www.google.com";
+    </script>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body>
+
+	<div id="main_container">
+		<div id="bkg_solid"></div>
+		<div id="chip_initial_bkg"></div>
+		<div id="chip_end_bkg" style="opacity: 1;"></div>
+		<div id="chip_watermark" style="opacity: 0;"></div>
+		<div id="text_1" class="sprite_load" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, -350);"></div>
+		<div id="text_2" class="sprite_load" style="opacity: 0; transform: matrix(1, 0, 0, 1, 0, 350);"></div>
+		<div id="text_3_container">
+			<div id="text_3A" class="sprite_load" style="opacity: 0; transform: matrix(0, 0, 0, 0, 0, 0);"></div>
+			
+		</div>
+		<div id="text_4_container">
+			<div id="text_4A" class="sprite_load t4_stagger" style="transform: matrix(1, 0, 0, 1, -250, 0); opacity: 0;"></div>
+			
+		</div>
+		
+		<div id="araig_logo" class="logos" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+		<div id="chip_roundlogo" class="logos" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+		<div id="cta_container" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+			<div id="cta_stroke"></div>
+			<div id="cta_background"></div>
+			<div id="chip_ctaTxt"></div>
+		</div>
+		<div id="loading" style="opacity: 0;"></div>
+		<div id="border"></div>
+		<a href="javascript:window.open(window.clickTag)"><div id="clicktag">CLICK TAG</div></a>
+	</div>
+	
+	<script src="./TweenMax.min.js"></script>
+
+    <script>
+
+	function start_ad(){
+	    var banner_end = false,
+	    	load = document.getElementById('loading'),
+	    	
+	    	endFood = document.getElementById('chip_end_bkg'),
+	    	watermark = document.getElementById('chip_watermark'),
+	    	cta_container = document.getElementById('cta_container'),
+	    	cta_stroke = document.getElementById('cta_stroke'),
+	    	cta_background = document.getElementById('cta_background'),
+	    	t1 = document.getElementById('text_1'),
+	    	t2 = document.getElementById('text_2'),
+	    	text_3A = document.getElementById('text_3A'),
+	    	t3_stagger = document.getElementsByClassName('t3_stagger'),
+	    	text_4A = document.getElementById('text_4A'),
+	    	t4_stagger = document.getElementsByClassName('t4_stagger'),
+	    	logos = document.getElementsByClassName('logos'),
+	    	clearTL = new TimelineMax,
+	    	
+	        textTL = new TimelineMax();
+
+
+	    function clearStage(){
+	    	var clearNow = new TimelineMax();
+
+	    	clearNow
+	    		// .set(OBJECT, {y: '-=25'})
+	    		.set([t1, t2, logos, text_3A, cta_container], {opacity: 0})
+	    		.set(text_3A, {scale: 3})
+	    		.set(t1, {y:'-500'})
+	    		.set(t2, {y:'+500'})
+	    		.set(logos, {x:'+250'})
+	    		.set(endFood, {opacity: 0})
+	    		.set([text_4A, cta_container], {scale: 0})
+	    	;
+
+	    	return clearNow;
+
+	    }
+	    
+	    function img1(){
+	        var img1_TL = new TimelineMax();
+
+	        img1_TL
+	        	.to(load, 0.1, {opacity: 0})
+	        	.add('start_ani')
+	        	.to(t1, 0.35, {y: '+50', opacity: 1, ease:Back.easeOut, easeParams:[0.7]}, 'start_ani')
+	        	.to(t2, 0.35, {y: '0', opacity: 1, ease:Back.easeOut, easeParams:[0.7]}, 'start_ani+=0.22')
+	        	.to(t1, 0.35, {y: '0', ease:Back.easeOut, easeParams:[3]}, 'start_ani+=0.38')
+	        	.add('text_2_ani', '+=1')
+	        	.to(t1, 0.25, {opacity: 0, y: '-350', ease:Back.easeIn, easeParams:[0.7]}, 'text_2_ani')
+	        	.to(t2, 0.25, {opacity: 0, y: '+350', ease:Back.easeIn, easeParams:[0.7]}, 'text_2_ani')
+	        	
+	        	.to(text_3A, 0.5, {opacity: 1, ease:Power4.easeOut}, 'text_2_ani+=0.35')
+	        	.to(text_3A, 0.25, {scale: 1, ease:Back.easeInOut, easeParams:[1.5]}, 'text_2_ani+=0.35')
+	        	.add('text_4_ani', '+=1')
+	        	.to(text_3A, 0.45, {opacity: 0, scale: 0, ease:Expo.easeOut}, 'text_4_ani')
+	        	.to(text_4A, 0.5, {opacity: 1, ease:Power4.easeOut}, 'text_4_ani+=0.25')
+	        	.to(text_4A, 0.25, {scale: 1, ease:Back.easeInOut, easeParams:[2]}, 'text_4_ani+=0.25')
+	        	.add('end_ani', '+=1.5')
+	        	.to(watermark, 0.2, {opacity: 0}, 'end_ani')
+	        	.to(text_4A, 0.45, {x:'-250', opacity: 0, ease:Expo.easeInOut}, 'end_ani')
+	        	.staggerTo(logos, 0.65, {x:'0', opacity: 1, ease:Expo.easeInOut}, -0.05, 'end_ani+=0.35')
+	        	.to(endFood, 1.5, {opacity: 1, ease:Power3.easeOut}, 'end_ani+=0.5')
+	        	
+	        	.to(cta_container, 0.25, {scale: 1, opacity: 1, ease:Back.easeInOut, easeParams:[1.15], onComplete: bannerDone}, 'end_ani+=1.2')
+	            ;
+	        return img1_TL;
+	    };
+
+    	function bannerDone(){
+
+            banner_end = true;
+    	};
+
+    	//CLICK TAG
+        clicktag.addEventListener('mouseover', function() {
+            if(banner_end){
+                var cta_TL = new TimelineMax();
+
+             cta_TL
+                .add('ctaOver')
+                .to([cta_background, cta_stroke], 0.25, {scale: 1.05, ease:Expo.easeOut}, 'ctaOver')
+                
+                ;
+                return cta_TL;
+         }
+        } );
+
+        clicktag.addEventListener('mouseout', function() {
+            if(banner_end){
+                var cta_TL = new TimelineMax();
+             cta_TL
+                .add('ctaOut')
+                .to([cta_background, cta_stroke], 0.25, {scale: 1, ease:Expo.easeOut}, 'ctaOut')
+
+                return cta_TL;
+         }
+        } );
+
+	    function init(){
+	        //WAIT FOR PAGE LOAD TO DISPLAY ELEMENTS
+
+	        clearTL
+	        	.add(clearStage(), 'clear_tl');
+
+	        textTL
+	            .add(img1(), 'image1')
+	            ;
+
+	        // textTL.seek('image1+=5')
+	        // textTL.pause();
+
+	    };	    
+	    init();
+	}
+	    
+    window.onload = function ()
+    { 
+        start_ad();
+    }
+
+ </script>
+
+</body></html>
