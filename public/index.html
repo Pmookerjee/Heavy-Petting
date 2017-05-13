@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/tinderesque.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <title>Heavy Petting</title>
+
+  <script id="resultsTemplate" type="text/x-handlebars-template">
+    <h1>{{name}}</h1>
+    <img src="{{photo}}">
+    <p>Age: {{age}}</p>
+    <p>Animal Type: {{animal}}</p>
+
+  </script>
+
+</head>
+<body>
+  <section class="wrapper">
+    <header class="header">
+      <img src="public/assets/pngs/inkcat.png" alt="">
+      <section class="title">
+        <h1 class="titleWords">Heavy Petting</h1>
+        <img class= "titleImg" src="public/assets/pngs/pawprint.png">
+      </section>
+      <img src="public/assets/pngs/inkdog.png" alt="">
+
+    </header>
+  </section>
+
+  <section class="body">
+
+    <section class="getStart tab-content" id="getStart">
+    <form class="filterForm" action="index.html" method="post">
+
+    Zip Code:<br>
+    <input type="text" name="" placeholder="Zip Code">
+    <input type="submit" name="" value="Get Your Pet On">
+  </form>
+</section>
+
+<section class="selectionPage tab-content" id="selectionPage">
+  <button type="button" name="button">back</button>
+  <section class="cardAlign">
+    <div class="cardcontainer list">
+      <ul>
+        <li class="card current">#1</li>
+        <li class="card"><img src="public/assets/pngs/inkcat.png" alt=""></li>
+        <li class="card">#3</li>
+        <li class="card">#4</li>
+        <li class="card">#5</li>
+        <li class="card">#6</li>
+      </ul>
+      <button class="but-nope">X</button>
+      <button class="but-yay">✔</button>
+    </div>
+    <button type="button" name="button">My faves</button>
+  </section>
+</section>
+
+<section class="results">
+
+  <section id="results">
+
+  </section>
+
+</section>
+
+
+</section>
+
+<footer>
+
+</footer>
+
+<script src="js/tinderesque.js" charset="utf-8"></script>
+<script src="vendor/scripts/jquery-3.2.0.js" type="text/javascript"></script>
+<script src="vendor/scripts/page.js"></script>
+<script src="vendor/scripts/handlebars-v4.0.5.js"></script>
+<script src="controllers/routes.js" type="text/javascript"></script>
+<script src="models/pet.js" type="text/javascript"></script>
+<script>
+  requestPet('98103');
+</script>
+
+</body>
+</html>
