@@ -1,11 +1,4 @@
 
-'use strict'
-
-(module => {
-  function Pets(petInfo) {
-    Object.keys(petInfo).forEach(key => this[key] = petInfo[key]);
-  }
-
   Pets.all = [];
 
   const requestPet = (zip) => {
@@ -27,3 +20,4 @@
 
   module.Pets = Pets;
 })(window);
+
