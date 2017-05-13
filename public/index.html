@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="public/css/base.css">
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/tinderesque.css">
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -37,9 +37,10 @@
     <section class="getStart tab-content" id="getStart">
     <form class="filterForm" action="index.html" method="post">
 
+      <p id="returnString"></p>
     Zip Code:<br>
-    <input type="text" name="" placeholder="Zip Code">
-    <input type="submit" name="" value="Get Your Pet On">
+    <input type="text" id = "zip" placeholder="Zip Code" minlength="1" maxlength="5">
+    <input type="submit" id ="submit" value="Get Your Pet On">
   </form>
 </section>
 
@@ -62,9 +63,9 @@
   </section>
 </section>
 
-<section class="results">
+<section class="<fave></fave>s tabcontent">
 
-  <section id="results">
+  <section id="faves">
 
   </section>
 
@@ -83,8 +84,9 @@
 <script src="vendor/scripts/handlebars-v4.0.5.js"></script>
 <script src="controllers/routes.js" type="text/javascript"></script>
 <script src="models/pet.js" type="text/javascript"></script>
+<script src="/views/filterByZip.js" charset="utf-8"></script>
 <script>
-  requestPet('98103');
+  Pets.prototype.requestPet('98115');
 </script>
 
 </body>
