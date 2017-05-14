@@ -20,16 +20,9 @@ const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
-// function proxyPetFinder(request, response) {
-//   console.log('Routing PetFinder request for', request.params[0]);
-//   (requestProxy({
-//     url: `http://api.petfinder.com/${request.params[0]}`
-//   }))(request, response);
-// }
-
-app.get('*', function(request, response) {
-  response.sendFile(__dirname + '/public/index.html');
-});
+// app.get('*', function(request, response) {
+//   response.sendFile(__dirname + '/public/index.html');
+// });
 // app.get('/petFinder/*', proxyPetFinder);
 // app.get('/faves', (request, response) => response.sendFile('faves.html', {root: './public'}));
 // app.get('/pet', (request, response) => response.sendFile('pet.html', {root: './public'}));
@@ -39,17 +32,7 @@ app.listen(PORT, function(){
 });
 
 
-// function loadPets() {
-//   fs.readFile('./public/data/hackerIpsum.json', (err, fd) => {
-//     JSON.parse(fd.toString()).forEach(ele => {
-//       client.query(
-//         'INSERT INTO authors(author, "authorUrl") VALUES($1, $2) ON CONFLICT DO NOTHING',
-//         [ele.author, ele.authorUrl]
-//       )
-//       .catch(console.error);
-//     })
-//   })
-// }
+
 //
 // function loadZipcodes() {
 //   client.query('SELECT COUNT(*) FROM articles')
@@ -73,34 +56,58 @@ app.listen(PORT, function(){
 //   })
 // }
 
+loadDB();
 
+app.post('/pet', function(request, response) {
+
+  client.query(
+    'INSERT INTO animals (id, animal, name, description, zipcode, photo, age, size, sex) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+    [
+      request.body.id,
+      request.body.animal,
+      request.body.name,
+      request.body.description,
+      request.body.zipcode,
+      request.body.photo,
+      request.body.age,
+      request.body.size,
+      request.body.sex
+    ]
+  )
+  .then(function() {
+    response.send('Successfully inserted into animals table')
+  })
+  .catch(function(err) {
+    console.error(err);
+  });
+});
 
 function loadDB() {
   client.query(`
     CREATE TABLE IF NOT EXISTS
-     pets (
-      id SERIAL PRIMARY KEY,
+     animals (
+      id INTEGER UNIQUE NOT NULL,
       animal VARCHAR(255),
       breed VARCHAR(255),
       name VARCHAR (255),
       description VARCHAR (255),
-      zipcode_id INTEGER,
+      zipcode VARCHAR (255),
       photo VARCHAR (255),
-      age INTEGER,
+      age VARCHAR (255),
       size VARCHAR (255),
       sex VARCHAR (255)
     );`
   )
-  .then(loadPets)
+  .then()
   .catch(console.error);
 
-  client.query(`
-    CREATE TABLE IF NOT EXISTS
-    zipcode (
-      id INTEGER NOT NULL REFERENCES pets(zipcode_id),
-      location VARCHAR(255) NOT NULL,
-    );`
-  )
-  .then(loadZipcodes)
-  .catch(console.error);
+  // client.query(`
+  //   CREATE TABLE IF NOT EXISTS
+  //   zipcode (
+  //     id INTEGER NOT NULL REFERENCES pets(zipcode_id),
+  //     location VARCHAR(255) NOT NULL,
+  //   );`
+  // )
+  // .then(loadZipcodes)
+  // .catch(console.error);
 }
