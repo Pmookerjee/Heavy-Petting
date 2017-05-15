@@ -3,8 +3,9 @@
 (function(module) {
 
   const PetView = {};
+  let zipcode = '98119'
 
-  Pets.fetchByZipcode(PetView.initPetPage);
+  Pets.fetchByZipcode(zipcode, PetView.initPetPage);
 
   PetView.initPetPage = () => { console.log('PetView.initPetPage callback successful')}
 

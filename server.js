@@ -59,12 +59,15 @@ app.listen(PORT, function(){
 loadDB();
 
 
-app.get('/pet/:zipcode', function(request, response) {
+app.get(`/pet/:zip`, function(request, response) {
   client.query(`
   SELECT * FROM animals
-  where zipcode = $1;`
+  where zipcode = $1;`,
+  [ request.params.zip]
 )
   .then(function(result) {
+    console.log('successfully ran query - in the server')
+    console.log(result);
     response.send(result.rows);
   })
   .catch(function(err) {

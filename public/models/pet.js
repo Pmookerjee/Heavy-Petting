@@ -22,10 +22,10 @@
    .done(function(data) {
      console.log( 'API request successful ' );
      console.log(data);
-     console.log('length of data is ', data.petfinder.pets.pet.length);
+     let length = data.petfinder.pets.pet.length;
 
 
-     for (var i = 0; i < count; i++){
+     for (var i = 0; i < length; i++){
        let shortDescrip = 'No description available', photoPlaceholder = 'No Photo Available';
        if(data.petfinder.pets.pet[i].description['$t']) {
          shortDescrip = data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 50);
@@ -54,35 +54,17 @@
   }
 
 
-
-  Pets.fetchByZipcode = function(callback){
-    // $.get(`/pet/${this.zipcode}`)
-    $.get(`/pet/98117`)
+  Pets.fetchByZipcode = function(zip, callback){
+    $.get(`/pet/` + zip)
     .then(
       results => {
+
+        console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
         callback();
       }
     )
   };
-
-  // Pet.prototype.fetchByZipcode = function(callback) {
-  //   $.ajax({
-  //     url: `/pet/${this.zipcode}`,
-  //     method: 'GET',
-  //     data: {
-  //       author: this.author,
-  //       authorUrl: this.authorUrl,
-  //       body: this.body,
-  //       category: this.category,
-  //       publishedOn: this.publishedOn,
-  //       title: this.title,
-  //       author_id: this.author_id
-  //     }
-  //   })
-  //   .then(callback);
-  // };
-
 
   Pets.prototype.toHtml = function () {
     const template = Handlebars.compile($('#').text());
