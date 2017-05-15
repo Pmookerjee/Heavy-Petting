@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="public/css/base.css">
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/tinderesque.css">
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -15,6 +15,11 @@
     <img src="{{photo}}">
     <p>Age: {{age}}</p>
     <p>Animal Type: {{animal}}</p>
+    <p>Description: {{description}}</p>
+    <p>Size: {{size}}</p>
+    <p>Sex: {{sex}}</p>
+    <p>Zip Code: {{contact}}</p>
+
 
   </script>
 
@@ -62,9 +67,9 @@
   </section>
 </section>
 
-<section class="results">
+<section class="faves tab-content">
 
-  <section id="results">
+  <section id="faves">
 
   </section>
 
@@ -84,7 +89,7 @@
 <script src="controllers/routes.js" type="text/javascript"></script>
 <script src="models/pet.js" type="text/javascript"></script>
 <script>
-  requestPet('98103');
+  Pets.prototype.requestPet('98178');
 </script>
 
 </body>
