@@ -58,10 +58,25 @@ app.listen(PORT, function(){
 
 loadDB();
 
+
+app.get('/pet/:zipcode', function(request, response) {
+  client.query(`
+  SELECT * FROM animals
+  where zipcode = $1;`
+)
+  .then(function(result) {
+    response.send(result.rows);
+  })
+  .catch(function(err) {
+    console.error(err)
+  })
+});
+
+
 app.post('/pet', function(request, response) {
 
   client.query(
-    'INSERT INTO animals (id, animal, name, description, zipcode, photo, age, size, sex) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+    'INSERT INTO animals (id, animal, name, description, zipcode, photo, age, size, sex) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) ON CONFLICT DO NOTHING;',
     [
       request.body.id,
       request.body.animal,

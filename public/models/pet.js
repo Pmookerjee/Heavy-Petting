@@ -5,25 +5,42 @@
     Object.keys(petInfo).forEach(key => this[key] = petInfo[key]);
   }
 
+  Pets.all = [];
+  let count = 50;
 
 
-  Pets.prototype.requestPet = (zip) => {
+  Pets.loadAll = rows => {
+    Pets.all = rows.map(pet => new Pets(pet));
+  };
 
-    // Pets.all = [];
-    var count = 4;
 
-    $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&location=` + zip + `&callback=?`)
+  Pets.requestPet = (zip) => {
+
+
+
+    $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
    .done(function(data) {
      console.log( 'API request successful ' );
+     console.log(data);
+     console.log('length of data is ', data.petfinder.pets.pet.length);
+
 
      for (var i = 0; i < count; i++){
+       let shortDescrip = 'No description available', photoPlaceholder = 'No Photo Available';
+       if(data.petfinder.pets.pet[i].description['$t']) {
+         shortDescrip = data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 50);
+       }
+       if(data.petfinder.pets.pet[i].media.photos) {
+         photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
+       }
+
        $.post('/pet', {
          id: data.petfinder.pets.pet[i].id['$t'],
          animal: data.petfinder.pets.pet[i].animal['$t'],
          name: data.petfinder.pets.pet[i].name['$t'],
-         description: data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 100),
+         description: shortDescrip,
          zipcode: data.petfinder.pets.pet[i].contact.zip['$t'],
-         photo: data.petfinder.pets.pet[i].media.photos.photo[3]['$t'],
+         photo: photoPlaceholder,
          age: data.petfinder.pets.pet[i].age['$t'],
          size: data.petfinder.pets.pet[i].size['$t'],
          sex: data.petfinder.pets.pet[i].sex['$t']
@@ -35,6 +52,36 @@
     console.log( 'API request failed' );
   });
   }
+
+
+
+  Pets.fetchByZipcode = function(callback){
+    // $.get(`/pet/${this.zipcode}`)
+    $.get(`/pet/98117`)
+    .then(
+      results => {
+        Pets.loadAll(results);
+        callback();
+      }
+    )
+  };
+
+  // Pet.prototype.fetchByZipcode = function(callback) {
+  //   $.ajax({
+  //     url: `/pet/${this.zipcode}`,
+  //     method: 'GET',
+  //     data: {
+  //       author: this.author,
+  //       authorUrl: this.authorUrl,
+  //       body: this.body,
+  //       category: this.category,
+  //       publishedOn: this.publishedOn,
+  //       title: this.title,
+  //       author_id: this.author_id
+  //     }
+  //   })
+  //   .then(callback);
+  // };
 
 
   Pets.prototype.toHtml = function () {
