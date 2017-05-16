@@ -14,7 +14,7 @@
   };
 
   Pets.prototype.toHtml = function () {
-    const template = Handlebars.compile($('#').text());
+    const template = Handlebars.compile($('resultsTemplate').text());
     return template(this);
   };
 
