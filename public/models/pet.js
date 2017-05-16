@@ -10,7 +10,6 @@
 
   Pets.requestPet = (zip, callback) => {
     Pets.all = [];
-    Pets_zip = zip;
 
     console.log('zipcode in requestPet is:', zip);
     $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
@@ -27,6 +26,8 @@
        if(data.petfinder.pets.pet[i].media.photos) {
          photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
        }
+       Pets_zip = data.petfinder.pets.pet[i].contact.zip['$t'];
+
 
        $.post('/pet', {
          id: data.petfinder.pets.pet[i].id['$t'],
