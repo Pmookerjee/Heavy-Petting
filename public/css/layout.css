@@ -1,59 +1,55 @@
+@media all and (min-width: 1px) {
+  .wrapper{
+    width: 100%;
+    border-style: dashed;
+  }
+  .header{
+    padding-top: 2em;
+    padding-bottom: 1em;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+  }
+  .title{
+    float: left;
+    margin-left: 1em;
+    margin-right: 1em;
+    max-width: 80.5%;
+    background-position: center;
+    text-align: center;
+  }
+  .titleImg{
+    width: 11em;
+  }
 
-.wrapper{
-  width: 100%;
-  border-style: dashed;
-}
-.header{
-  padding-top: 2em;
-  padding-bottom: 1em;
-  width: 100%;
-  display:flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: space-between;
-  align-items: center;
-}
-.title{
-  float: left;
-  margin-left: 1em;
-  margin-right: 1em;
-  max-width: 80.5%;
-  background-position: center;
-  text-align: center;
-}
-.titleImg{
-  width: 11em;
-}
-
-.titleWords{
-  border-style: dashed;
-  display: block;
-}
+  .titleWords{
+    border-style: dashed;
+    display: block;
+  }
 
 
+  .filterForm{
+    padding-top:50%;
+    padding-bottom: 50%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+  }
 
-.filterForm{
-  padding-top:50%;
-  padding-bottom: 50%;
-  display:flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: space-between;
-  align-items: center;
+  .selectionPage{
+    width: 100%;
+    height: 30em;
+  }
 }
-
-.selectionPage{
-  width: 100%;
-  height: 100%;
-}
-
-.cardAlign{
-  display:flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: space-between;
-  align-items: center;
+@media all and (min-width: 669px) {
+  .wrap{
+    margin-left: 28em;
+  }
 }
