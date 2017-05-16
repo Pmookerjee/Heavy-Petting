@@ -2,4 +2,9 @@
 
 // card templater
 
-const render = Handlebars.compile($('#cardTemplate').text());
+// const render = Handlebars.compile($('#cardTemplate').text());
+
+$('input:text').focus(
+    function(){
+        $(this).val('');
+    });
