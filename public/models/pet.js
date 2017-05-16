@@ -15,6 +15,7 @@
      console.log(data);
      let length = data.petfinder.pets.pet.length;
 
+
      for (var i = 0; i < length; i++){
        let shortDescrip = 'No description available', photoPlaceholder = 'No Photo Available';
        if(data.petfinder.pets.pet[i].description['$t']) {
@@ -74,7 +75,7 @@
 }
 
   Pets.prototype.toHtml = function () {
-    const template = Handlebars.compile($('#').text());
+    const template = Handlebars.compile($('resultsTemplate').text());
     return template(this);
   };
 

@@ -5,7 +5,11 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/base.css">
+
+  
+
   <link rel="stylesheet" type="text/css" href="/vendor/styles/jTinder.css">
+
 
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -16,7 +20,11 @@
     <img src="{{photo}}">
     <p>Age: {{age}}</p>
     <p>Animal Type: {{animal}}</p>
-  </script>
+    <p>Description: {{description}}</p>
+    <p>Size: {{size}}</p>
+    <p>Sex: {{sex}}</p>
+    <p>Zip Code: {{contact}}</p>
+</script>
 
   <script id="cardTemplate" type="text/x-handlebars-template">
     <li class="pane1">
@@ -109,7 +117,8 @@
   </section>
 </section>
 
-<section class="<fave></fave>s tabcontent">
+<section class="faves tab-content">
+
 
   <section id="faves">
 
@@ -144,6 +153,7 @@
 <script src="/views/filterByZip.js" charset="utf-8"></script>
 
 <script>
+
   Pets.requestPet('98103');
 </script>
 </body>
