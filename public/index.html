@@ -33,12 +33,13 @@
 <body>
   <section class="wrapper">
     <header class="header">
-      <img src="/assets/pngs/inkcat.png" alt="">
+
+      <img src="assets/pngs/inkcat.png" alt="">
       <section class="title">
         <h1 class="titleWords">Heavy Petting</h1>
-        <img class= "titleImg" src="/assets/pngs/pawprint.png">
+        <img class= "titleImg" src="assets/pngs/pawprint.png">
       </section>
-      <img src="/assets/pngs/inkdog.png" alt="">
+      <img src="assets/pngs/inkdog.png" alt="">
 
     </header>
   </section>
@@ -50,12 +51,14 @@
 
       <p id="returnString"></p>
     Zip Code:<br>
+
     <input type="text" class = "formImput" id = "zip" placeholder="Zip Code" minlength="1" maxlength="5" required>
     <input type="submit" id ="submit" value="Get Your Pet On">
   </form>
 </section>
 
 <section class="selectionPage tab-content" id="selectionPage">
+
   <section class="splitArrows">
     <a href="#"><img src="/assets/pngs/back.png" alt=""></a>
     <a href="#"><img src="/assets/pngs/forward.png" alt=""></a>
@@ -135,15 +138,19 @@
 
 <!-- jTinder initialization script -->
 <script>$("#tinderslide").jTinder();</script>
+
 <script src="/js/neededFunction.js" charset="utf-8"></script>
 <script src="vendor/scripts/page.js"></script>
+<script src="models/pet.js" type="text/javascript"></script>
+<script src="views/PetView.js"></script>
 <script src="vendor/scripts/handlebars-v4.0.5.js"></script>
 <script src="controllers/routes.js" type="text/javascript"></script>
-<script src="models/pet.js" type="text/javascript"></script>
-<script src="/views/filterByZip.js" charset="utf-8"></script>
-<script>
-  Pets.prototype.requestPet('98115');
-</script>
 
+<script src="/views/filterByZip.js" charset="utf-8"></script>
+
+<script>
+  Pets.requestPet('98103');
+
+</script>
 </body>
 </html>
