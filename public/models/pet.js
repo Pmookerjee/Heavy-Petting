@@ -8,22 +8,12 @@
   Pets.all = [];
   let count = 50;
 
-
-  Pets.loadAll = rows => {
-    Pets.all = rows.map(pet => new Pets(pet));
-  };
-
-
   Pets.requestPet = (zip) => {
-
-
-
     $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
    .done(function(data) {
      console.log( 'API request successful ' );
      console.log(data);
      let length = data.petfinder.pets.pet.length;
-
 
      for (var i = 0; i < length; i++){
        let shortDescrip = 'No description available', photoPlaceholder = 'No Photo Available';
@@ -43,11 +33,11 @@
          photo: photoPlaceholder,
          age: data.petfinder.pets.pet[i].age['$t'],
          size: data.petfinder.pets.pet[i].size['$t'],
-         sex: data.petfinder.pets.pet[i].sex['$t']
+         sex: data.petfinder.pets.pet[i].sex['$t'],
+         email: data.petfinder.pets.pet[i].contact.email['$t']
        }, 'json');
      }
    })
-
   .fail(function() {
     console.log( 'API request failed' );
   });
@@ -61,10 +51,18 @@
 
         console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
-        callback();
       }
     )
+    .then(callback)
   };
+
+  Pets.loadAll = rows => {
+    Pets.all = rows.map(pet => new Pets(pet));
+  };
+
+  Pets.saveFaves = faves => {
+
+  }
 
   Pets.prototype.toHtml = function () {
     const template = Handlebars.compile($('#').text());
