@@ -5,16 +5,19 @@
     Object.keys(petInfo).forEach(key => this[key] = petInfo[key]);
   }
 
-  Pets.all = [];
   let count = 50;
+  let Pets_zip = '';
 
-  Pets.requestPet = (zip) => {
+  Pets.requestPet = (zip, callback) => {
+    Pets.all = [];
+    Pets_zip = zip;
+
+    console.log('zipcode in requestPet is:', zip);
     $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
    .done(function(data) {
-     console.log( 'API request successful ' );
+     console.log( 'API request successful');
      console.log(data);
      let length = data.petfinder.pets.pet.length;
-
 
      for (var i = 0; i < length; i++){
        let shortDescrip = 'No description available', photoPlaceholder = 'No Photo Available';
@@ -39,46 +42,38 @@
        }, 'json');
      }
    })
-  .fail(function() {
-    console.log( 'API request failed' );
-  });
+   .then(callback())
+   .fail(function() {
+     console.log( 'API request failed' );
+   });
   }
 
 
-  Pets.fetchByZipcode = function(zip, callback){
-    $.get(`/pet/` + zip)
+  Pets.fetchByZipcode = function(){
+    $.get(`/pet/` + Pets_zip)
     .then(
       results => {
-
         console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
       }
     )
-    .then(callback)
   };
 
   Pets.loadAll = rows => {
     Pets.all = rows.map(pet => new Pets(pet));
+    console.log('LoadAll: ', Pets.all)
   };
 
   Pets.saveFaves = faves => {
 
-
   }
 
-  Pets.all = [];
-
-  Pets.prototype.requestPet = (zip) => {
-  $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&location=` + zip + `&callback=?`)
- .done(function(data) { console.log(data.petfinder.pets); })
- .error(function(err) { alert('Error retrieving data!'); });
-}
-
   Pets.prototype.toHtml = function () {
-    const template = Handlebars.compile($('resultsTemplate').text());
+    const template = Handlebars.compile($('#').text());
     return template(this);
   };
 
 
-module.Pets = Pets;
+
+  module.Pets = Pets;
 })(window);
