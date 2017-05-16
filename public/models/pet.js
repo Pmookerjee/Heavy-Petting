@@ -5,6 +5,7 @@
     Object.keys(petInfo).forEach(key => this[key] = petInfo[key]);
   }
 
+
   Pets.all = [];
   let count = 50;
 
@@ -77,7 +78,6 @@
     const template = Handlebars.compile($('#').text());
     return template(this);
   };
-
 
 module.Pets = Pets;
 })(window);

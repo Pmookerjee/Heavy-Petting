@@ -31,6 +31,16 @@
     display: block;
   }
 
+  .splitArrows{
+    display:flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-content: flex-start;
+   align-items: center;
+  }
+
+
 
   .filterForm{
     padding-top:50%;
@@ -41,6 +51,14 @@
     justify-content: center;
     align-content: space-between;
     align-items: center;
+  }
+
+
+  .formImput{
+    font-size: 2em;
+    text-align: center;
+    border-radius: 30px;
+
   }
 
   .selectionPage{
