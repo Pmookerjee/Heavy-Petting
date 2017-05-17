@@ -55,6 +55,8 @@
       results => {
         console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
+        toDom.renderToCards();
+        $("#tinderslide").jTinder();
       }
     )
   };
