@@ -6,7 +6,7 @@
   }
 
   let count = 50;
-  let Pets_zip = '';
+  Pets.zip = '';
 
   Pets.requestPet = (zip, callback) => {
     Pets.all = [];
@@ -26,8 +26,7 @@
        if(data.petfinder.pets.pet[i].media.photos) {
          photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
        }
-       Pets_zip = data.petfinder.pets.pet[i].contact.zip['$t'];
-
+       Pets.zip = data.petfinder.pets.pet[0].contact.zip['$t'];
 
        $.post('/pet', {
          id: data.petfinder.pets.pet[i].id['$t'],
@@ -42,8 +41,8 @@
          email: data.petfinder.pets.pet[i].contact.email['$t']
        }, 'json');
      }
+     callback();
    })
-   .then(callback())
    .fail(function() {
      console.log( 'API request failed' );
    });
@@ -51,18 +50,19 @@
 
 
   Pets.fetchByZipcode = function(){
-    $.get(`/pet/` + Pets_zip)
+    $.get(`/pet/` + Pets.zip)
     .then(
       results => {
         console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
+        toDom.renderToCards();
+        $("#tinderslide").jTinder();
       }
     )
   };
 
   Pets.loadAll = rows => {
     Pets.all = rows.map(pet => new Pets(pet));
-    console.log('LoadAll: ', Pets.all)
   };
 
   Pets.saveFaves = faves => {
