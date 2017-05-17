@@ -202,14 +202,14 @@
 		onLike: function (item) {
 			$('#status').html('Like image ' + (item.index()+1));
 			console.log(item);
-			var zipString = item[0].id;
+			var zipStringId = item[0].id;
 			console.log(zipString);
 
 			for (var i in Pets.all) {
 
 				var petsAllIds = Pets.all[i].id;
 
-				if (zipString === (Pets.all[i].id).toString()) {
+				if (zipStringId === (Pets.all[i].id).toString()) {
 					console.log('winning');
 					console.log("won" + Pets.all[i].id);
 				}else{
