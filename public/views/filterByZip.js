@@ -11,10 +11,13 @@
         $('#returnString').text('');
         console.log(zip);
         Pets.requestPet(zip, Pets.fetchByZipcode);
+        $('ul').children().remove();
       } else {
         $('#returnString').text("Please enter a five digit zip code.").css("color","red")
       }
     })
+
+
   // got the zips
     module.filter = filter;
   })(window);

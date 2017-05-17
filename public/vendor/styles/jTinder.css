@@ -14,12 +14,7 @@ body, html {
     overflow-y: auto;
 }
 
-/* Wrapper with padding */
-.wrap  {
-    height: 20em;
-    width: 20em;
-    padding: 1em;
-}
+
 
 #tinderslide {
     position: relative;

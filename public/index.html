@@ -51,12 +51,14 @@
   <section class="body">
 
     <section class="getStart tab-content" id="getStart">
-    <form class="filterForm" action="index.html" method="post">
-
+    <form autocomplete="off" class="filterForm" action="index.html" method="post">
       <p id="returnString"></p>
-    Zip Code:<br>
+    <label class="subButton" for="zip">Zipcode</label>
     <input type="text" class = "formImput" id = "zip" placeholder="Zip Code" minlength="1" maxlength="5" required>
-    <input type="submit" id ="submit" value="Get Your Pet On">
+    <section class="image-wrapper">
+      <input type="image" src="/assets/pngs/yellowbone.png" id="submit" value="Submit"/>
+      <!-- <a href="#" id="submit"><h2 class="subName" >Submit</h2></a> -->
+    </section>
   </form>
 </section>
 
