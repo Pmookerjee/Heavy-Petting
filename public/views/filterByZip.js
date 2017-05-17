@@ -8,7 +8,7 @@
       event.preventDefault();
       let zip = $('#zip').val();
       if (/^[0-9]{5}$/.test(zip)) {
-        $('#returnString').text('');
+        $('#returnString').text(' ');
         console.log(zip);
         Pets.requestPet(zip, Pets.fetchByZipcode);
         $('ul').children().remove();
