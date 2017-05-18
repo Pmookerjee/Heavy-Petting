@@ -18,4 +18,5 @@ module.toDom = toDom;
 
 })(window);
 
-$('input:text').focus(function(){$(this).val('');});
+
+$('input:text').focus(function () {$(this).val('');});
