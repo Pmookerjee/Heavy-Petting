@@ -197,23 +197,29 @@
 
 	$("#tinderslide").jTinder({
 		onDislike: function (item) {
-			$('#status').html('Dislike image ' + (item.index()+1));
+			// $('#status').html('Pass' + (item.index()+1));
+			$('#status').html('Pass');
+        Pets.saveDislike(item);
 		},
 		onLike: function (item) {
-			$('#status').html('Like image ' + (item.index()+1));
-			console.log(item);
+			// $('#status').html('Save ' + (item.index()+1) + ' to Favorites');
+			$('#status').html('Saved to Favorites!');
 			var zipStringId = item[0].id;
-			console.log(zipStringId);
+
+
+			Pets.saveLike(item);
+			console.log(zipStringId	);
 
 			for (var i in Pets.all) {
 
 				var petsAllIds = Pets.all[i].id;
 
 				if (zipStringId === (Pets.all[i].id).toString()) {
-					console.log('winning');
-					console.log("won" + Pets.all[i].id);
+					// console.log('winning');
+					// console.log("won" + Pets.all[i].id);
+
 				}else{
-					console.log("didn't work");
+					// console.log("didn't work");
 					for (var i = 0; i < Pets.all.length; i++) {
 						// console.log(Pets.all[i].id);
 					}

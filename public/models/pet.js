@@ -7,15 +7,18 @@
 
   let count = 50;
   Pets.zip = '';
+  let viewed = [], likes = [], dislikes = [];
 
   Pets.requestPet = (zip, callback) => {
     Pets.all = [];
 
-    console.log('zipcode in requestPet is:', zip);
     $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
    .done(function(data) {
      console.log( 'API request successful');
      console.log(data);
+
+     if(!data.petfinder.pets) {  // Do something
+     }
      let length = data.petfinder.pets.pet.length;
 
      for (var i = 0; i < length; i++){
@@ -26,10 +29,13 @@
        if(data.petfinder.pets.pet[i].media.photos) {
          photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
        }
-       Pets.zip = data.petfinder.pets.pet[0].contact.zip['$t'];
+
+       let fullZip = data.petfinder.pets.pet[0].contact.zip['$t'];
+       Pets.zip = fullZip.substr(0,3);
+       console.log('zipcode substr in requestPet is: ', Pets.zip);
 
        $.post('/pet', {
-         id: data.petfinder.pets.pet[i].id['$t'],
+         id: data.petfinder.pets.pet[i].id['$t'].toString(),
          animal: data.petfinder.pets.pet[i].animal['$t'],
          name: data.petfinder.pets.pet[i].name['$t'],
          description: shortDescrip,
@@ -55,6 +61,8 @@
       results => {
         console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
+        Pets.loadLSBuffers();
+        // Pets.filterOutViewedPets();
         toDom.renderToCards();
         $("#tinderslide").jTinder();
       }
@@ -65,16 +73,42 @@
     Pets.all = rows.map(pet => new Pets(pet));
   };
 
-  Pets.saveFaves = faves => {
+  Pets.loadLSBuffers = () => {
+    if(localStorage.getItem('Dislikes')) {
+      dislikes.push(localStorage.getItem('Dislikes'));
+    }
+    if(localStorage.getItem('Likes')){
+      likes.push(localStorage.getItem('Likes'));
+    }
+    if(localStorage.getItem('Viewed')) {
+      viewed.push(localStorage.getItem('Viewed'));
+    }
+  }
 
+  Pets.saveDislike = (petId) => {
+		dislikes.push(petId[0].id);
+    viewed.push(petId[0].id);
+		localStorage.setItem('Dislikes', dislikes);
+    localStorage.setItem('Viewed', viewed)
+ 	}
+
+	Pets.saveLike = (petId) => {
+			likes.push(petId[0].id);
+      viewed.push(petId[0].id);
+			localStorage.setItem('Likes', likes);
+      localStorage.setItem('Viewed', viewed);
+	}
+
+  Pets.filterOutViewedPets = () => {
+    let viewed = [];
+    viewed.push(localStorage.getItem('Viewed'));
+      //Need to add filter function here...
   }
 
   Pets.prototype.toHtml = function () {
     const template = Handlebars.compile($('#').text());
     return template(this);
   };
-
-
 
   module.Pets = Pets;
 })(window);

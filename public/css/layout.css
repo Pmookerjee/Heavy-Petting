@@ -1,70 +1,123 @@
-@media all and (min-width: 1px) {
-  .wrapper{
-    width: 100%;
-    border-style: dashed;
-  }
-  .header{
-    padding-top: 2em;
-    padding-bottom: 1em;
-    width: 100%;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: space-between;
-    align-items: center;
-  }
-  .title{
-    float: left;
-    margin-left: 1em;
-    margin-right: 1em;
-    max-width: 80.5%;
-    background-position: center;
-    text-align: center;
-  }
-  .titleImg{
-    width: 11em;
-  }
 
-  .titleWords{
-    border-style: dashed;
-    display: block;
-  }
+.wrapper{
+  width: 100%;
+  border-style: dashed;
+}
+.header{
+  padding-top: 2em;
+  padding-bottom: 1em;
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+}
+.title{
+  float: left;
+  margin-left: 1em;
+  margin-right: 1em;
+  max-width: 80.5%;
+  background-position: center;
+  text-align: center;
+}
+.titleImg{
+  width: 11em;
+}
 
-  .splitArrows{
-    display:flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   align-content: flex-start;
-   align-items: center;
-  }
+.titleWords{
+  border-style: dashed;
+  display: block;
+}
 
+.pawTop{
+  margin-left: 1em;
+  margin-top: 1em;
+}
 
-  .filterForm{
-    padding-top:50%;
-    padding-bottom: 50%;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: space-between;
-    align-items: center;
-  }
+.splitArrows{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+}
 
   .formImput{
     font-size: 2em;
     text-align: center;
     border-radius: 30px;
+    outline: none;
   }
 
-  .selectionPage{
-    width: 100%;
-    height: 30em;
-  }
+
+.filterForm{
+  padding-top: 5%;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+}
+
+.formImput{
+  font-size: 2em;
+  text-align: center;
+  border-radius: 30px;
+  border: 2px solid rgb(173, 204, 204);
+  box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+  transition:500ms all ease;
+  padding:3px 3px 3px 3px;
+}
+
+.subButton{
+  visibility: hidden;
+}
+
+.image-wrapper{
+  position: relative;
+  margin-top: 1em;
+}
+
+.pawCss{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: stretch;
+  align-items: flex-end;
+}
+
+.pawBottom{
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.selectionPage{
+  width: 100%;
+  height: 30em;
+}
+.wrap  {
+  height: 20em;
+  width: 20em;
+  padding: 1em;
+  margin-left: .5em;
 }
 @media all and (min-width: 669px) {
   .wrap{
-    margin-left: 28em;
+    margin-left: 21em;
+  }
+  .filterForm {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
   }
 }
