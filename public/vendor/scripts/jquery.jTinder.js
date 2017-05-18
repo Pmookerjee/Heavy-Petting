@@ -209,7 +209,7 @@
 
 				var petsAllIds = Pets.all[i].id;
 
-				if (zipStringId === (Pets.all[i].id).toString()) {
+				if (zipStringId === Pets.all[i].id {
 					console.log('winning');
 					console.log("won" + Pets.all[i].id);
 				}else{
