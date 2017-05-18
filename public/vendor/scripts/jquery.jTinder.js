@@ -206,6 +206,7 @@
 			$('#status').html('Saved to Favorites!');
 			var zipStringId = item[0].id;
 
+
 			Pets.saveLike(item);
 			console.log(zipStringId	);
 

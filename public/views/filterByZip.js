@@ -11,6 +11,9 @@
         $('#returnString').text(' ');
         console.log(zip);
         Pets.requestPet(zip, Pets.fetchByZipcode);
+
+        page('/pet');
+
         $('ul').children().remove();
       } else {
         $('#returnString').text("Please enter a five digit zip code.").css("color","red")
