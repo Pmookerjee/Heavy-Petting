@@ -203,13 +203,13 @@
 			$('#status').html('Like image ' + (item.index()+1));
 			console.log(item);
 			var zipStringId = item[0].id;
-			console.log(zipString);
+			console.log(zipStringId	);
 
 			for (var i in Pets.all) {
 
 				var petsAllIds = Pets.all[i].id;
 
-				if (zipStringId === (Pets.all[i].id).toString()) {
+				if (zipStringId === Pets.all[i].id {
 					console.log('winning');
 					console.log("won" + Pets.all[i].id);
 				}else{
@@ -228,5 +228,3 @@
 	});
 
 })(jQuery, window, document);
-
-		
