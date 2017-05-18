@@ -14,12 +14,7 @@ body, html {
     overflow-y: auto;
 }
 
-/* Wrapper with padding */
-.wrap  {
-    height: 20em;
-    width: 20em;
-    padding: 1em;
-}
+
 
 #tinderslide {
     position: relative;
@@ -154,16 +149,16 @@ body, html {
 
 .actions a i {
     display: inline-block;
-    width: 40px;
+    width: 80px;
     height: 80px;
 }
 
 .actions a.dislike i {
-    background: url("/assets/pngs/dislike_button.png") no-repeat scroll center center;
+    background: url("/assets/pngs/noanimals.png") no-repeat scroll center center;
 }
 
 .actions a.like i {
-    background: url("/assets/pngs/like_button.png") no-repeat scroll center center;
+    background: url("/assets/pngs/likepaw.png") no-repeat scroll center center;
 }
 
 .actions a {

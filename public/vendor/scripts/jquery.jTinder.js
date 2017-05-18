@@ -205,7 +205,9 @@
 			// $('#status').html('Save ' + (item.index()+1) + ' to Favorites');
 			$('#status').html('Saved to Favorites!');
 			var zipStringId = item[0].id;
+
 			Pets.saveLike(item);
+			console.log(zipStringId	);
 
 			for (var i in Pets.all) {
 
@@ -214,6 +216,7 @@
 				if (zipStringId === (Pets.all[i].id).toString()) {
 					// console.log('winning');
 					// console.log("won" + Pets.all[i].id);
+
 				}else{
 					// console.log("didn't work");
 					for (var i = 0; i < Pets.all.length; i++) {
@@ -228,6 +231,5 @@
 		likeSelector: '.like',
 		dislikeSelector: '.dislike'
 	});
-
 
 })(jQuery, window, document);
