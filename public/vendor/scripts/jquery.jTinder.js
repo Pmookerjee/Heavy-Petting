@@ -203,7 +203,7 @@
 			$('#status').html('Like image ' + (item.index()+1));
 			console.log(item);
 			var zipStringId = item[0].id;
-			console.log(zipStringId);
+			console.log(zipStringId	);
 
 			for (var i in Pets.all) {
 
