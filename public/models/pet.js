@@ -100,25 +100,44 @@
     localStorage.setItem('Viewed', JSON.stringify(viewed));
   }
 
+
   Pets.filterOutViewedPets = () => {
-    let viewed = [];
-    viewed.push(JSON.parse(localStorage.getItem('Viewed')));
-    console.log(viewed);
-    Pets.filteredIds = $(Pets.all).filter(function (i,n){return n.id === viewed});
-    console.log(Pets.filteredIds);
+    Pets.ids = [];
+    Pets.ids.push(JSON.parse(localStorage.getItem('Viewed')));
+    console.log(Pets.ids);
+    // var parse = (localStorage.getItem('Viewed'))
+    // var truck = [];
+    // for (var i = 0; i < Pets.ids.length; i++) {
+    //   truck.push(JSON.parse(Pets.ids[i]));
+      // var car = JSON.parse(parse[i]);
+      // console.log(car);
+      // Pets.ids.push(car);
+    // }
+    // for(var i in Pets.all){
+    //   console.log(Pets.all[i].id);
+    //   console.log(viewed[i]);
+    //   if (Pets.all[i].id === viewed[1]) {
+    //     Pets.ids === Pets.all[i].id;
+      }
+    // }
+    // console.log('ele' + ele.id);
+    // console.log('new ids' + Pets.ids);
     //Need to add filter function here...
-  }
+  // }
 
   Pets.removePetsFromArray = () => {
     console.log("hello from shit ville");
-      console.log("hello from removepets: " + Pets.all);
+      console.log(Pets.all);
+      console.log('filter: '+ Pets.ids);
       for (var i = 0; i < Pets.all.length; ++i) {
-        if (Pets.all[i].id === Pets.filteredIds[i]) {
+        console.log(Pets.ids[i]);
+        console.log(Pets.all[i].id);
+        if (Pets.ids[i] === Pets.all[i].id) {
           Pets.all.splice(i, 1);
           console.log('here');
         }else {
           console.log('fail');
-        
+
         }
       }
   }
