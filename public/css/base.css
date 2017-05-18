@@ -22,3 +22,7 @@ footer{
 .font{
   font-family: 'Indie Flower', cursive;
 }
+
+#returnString {
+  color:rgb(046, 134, 171); 
+}
