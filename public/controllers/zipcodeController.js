@@ -3,8 +3,9 @@
 (module => {
   const zipcodeController = {};
   zipcodeController.index = () => {
+
     $('.tab-content').hide();
-    $('#zipcode').fadeIn();
+    $('#getStart').fadeIn();
   };
 
   module.zipcodeController = zipcodeController;
