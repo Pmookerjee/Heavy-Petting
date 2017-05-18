@@ -1,12 +1,21 @@
 'use strict';
 
-(function(module) {
+// card templater
+(module => {
 
-  const PetView = {};
+const toDom = {};
 
+toDom.render = Handlebars.compile($('#cardTemplate').html());
 
-  PetView.initPetPage = () => { console.log('PetView.initPetPage callback successful')}
+toDom.renderToCards = ()=>{
+  console.log("in render to cards");
+  Pets.all.forEach(function(pet) {
+    $('#liAppend').append(toDom.render(pet));
+  });
+}
 
-  module.PetView = PetView;
+module.toDom = toDom;
 
-})(window)
+})(window);
+
+$('input:text').focus(function(){$(this).val('');});
