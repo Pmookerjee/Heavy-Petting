@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
-const conString = 'postgres://tom:myPassword@localhost:5432/pets';
+const conString = 'postgres://paulamookerjee@localhost:5432/pets';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -36,7 +36,7 @@ loadDB();
 app.get(`/pet/:zip`, function(request, response) {
   client.query(`
   SELECT * FROM animals
-  where zipcode = $1;`,
+  WHERE zipcode LIKE $1 || '%' LIMIT 100;`,
   [ request.params.zip]
 )
   .then(function(result) {
@@ -51,7 +51,7 @@ app.get(`/pet/:zip`, function(request, response) {
 app.post('/pet', function(request, response) {
 
   client.query(
-    'INSERT INTO animals (id, animal, name, description, zipcode, photo, age, size, sex) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) ON CONFLICT DO NOTHING;',
+    'INSERT INTO animals (id, animal, name, description, zipcode, photo, age, size, sex, email) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) ON CONFLICT DO NOTHING;',
     [
       request.body.id,
       request.body.animal,
@@ -61,7 +61,8 @@ app.post('/pet', function(request, response) {
       request.body.photo,
       request.body.age,
       request.body.size,
-      request.body.sex
+      request.body.sex,
+      request.body.email
     ]
   )
   .then(function() {
@@ -76,7 +77,7 @@ function loadDB() {
   client.query(`
     CREATE TABLE IF NOT EXISTS
      animals (
-      id INTEGER UNIQUE NOT NULL,
+      id VARCHAR(255),
       animal VARCHAR(255),
       breed VARCHAR(255),
       name VARCHAR (255),
@@ -85,7 +86,8 @@ function loadDB() {
       photo VARCHAR (255),
       age VARCHAR (255),
       size VARCHAR (255),
-      sex VARCHAR (255)
+      sex VARCHAR (255),
+      email VARCHAR (255)
     );`
   )
   .then()
