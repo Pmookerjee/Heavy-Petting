@@ -128,11 +128,25 @@
   align-items: left;
 }
 .favesHead{
-  line-height: 5em;
   text-align: center;
   text-decoration: underline;
   background-image:;
 }
+.wrapfaves{
+  margin-top: 3em;
+  height: 81vw;
+  width: 81vw;
+}
+
+.flexfaves{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
 footer{
   height: 6em;
 }
@@ -167,7 +181,6 @@ footer{
   }
   .wrapfaves{
     margin-top: 3em;
-    margin-left: 2em;
     height: 22vw;
     width: 23vw;
   }
@@ -180,20 +193,20 @@ footer{
     align-content: center;
     align-items: center;
   }
-}
-.filterForm {
-  padding-top: 16%;
-  padding-bottom: 22%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: space-between;
-  align-items: center;
-}
 
-footer{
-  height: 10em;
-}
+  .filterForm {
+    padding-top: 16%;
+    padding-bottom: 22%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+  }
+
+  footer{
+    height: 10em;
+  }
 
 }

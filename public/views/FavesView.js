@@ -16,6 +16,13 @@ Faves.renderFaves = () => {
   });
 }
 
+$('#clearall').on('click', function(event){
+  event.preventDefault();
+  localStorage.clear();
+  window.location.reload(false); 
+  console.log("gobanana");
+})
+
 module.Faves = Faves;
 
 })(window);

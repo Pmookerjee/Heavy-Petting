@@ -64,6 +64,10 @@
 
 
     <section class="getStart tab-content" id="getStart">
+      <section class="splitArrows">
+        <a class="arrowleft" href="/faves"><img src="/assets/pngs/fav.png" alt=""></a>
+        <a class="arrowright" href="/pet"><img src="/assets/pngs/forward.png" alt=""></a>
+      </section>
       <form autocomplete="off" class="filterForm" id="filterForm" action="index.html" method="post">
         <p id="returnString">_</p>
         <label class="subButton" for="zip">Zipcode</label>
@@ -133,8 +137,9 @@
   </section>
 
   <section class="faves tab-content" id="faves">
-    <section class="arrowfaves arrowleft">
-      <a href="/pet"><img src="/assets/pngs/back.png" alt=""></a>
+    <section class="splitArrows">
+      <a class="arrowleft" href="/pet"><img src="/assets/pngs/back.png" alt=""></a>
+      <a class="arrowright" id="clearall" href="#"><img src="/assets/pngs/trash.png" alt=""></a>
     </section>
     <section class="favesHead">
       <h1 class="favestitle">Your Faves</h1>
@@ -144,6 +149,9 @@
         <ul id="renderToFaves" class="flexfaves">
 
         </ul>
+
+        <a class="arrowleft" id="clearall" href="#"><img src="/assets/pngs/trash.png" alt=""></a>
+
 
   </section>
 
