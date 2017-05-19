@@ -27,7 +27,6 @@ app.get(`/pet/:zip`, function(request, response) {
   client.query(`
   SELECT * FROM animals
   WHERE zipcode LIKE $1 || '%' LIMIT 100;`,
-
   [ request.params.zip]
 )
   .then(function(result) {
@@ -84,23 +83,11 @@ function loadDB() {
   .then()
   .catch(console.error);
 
-  // client.query(`
-  //   CREATE TABLE IF NOT EXISTS
-  //   zipcode (
-  //     id INTEGER NOT NULL REFERENCES pets(zipcode_id),
-  //     location VARCHAR(255) NOT NULL,
-  //   );`
-  // )
-  // .then(loadZipcodes)
-  // .catch(console.error);
 }
 
 app.get('/*', function(request, response) {
   response.sendFile(__dirname + '/public/index.html');
 });
-
-// app.get('/faves', (request, response) => response.sendFile('faves.html', {root: './public'}));
-// app.get('/pet', (request, response) => response.sendFile('pet.html', {root: './public'}));
 
 app.listen(PORT, function(){
   console.log('Server is running on port: ' + PORT);

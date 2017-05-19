@@ -13,7 +13,6 @@
     Pets.all = [];
     
     $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
-
    .done(function(data) {
      console.log( 'API request successful');
      console.log(data);
@@ -86,7 +85,7 @@
     })
     return filteredSet;
  }
-
+ 
  Pets.saveViewed = (petID) => {
     if( localStorage.getItem('Viewed') !== null ){
           viewed = JSON.parse(localStorage.getItem('Viewed'));
