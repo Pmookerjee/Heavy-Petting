@@ -45,16 +45,17 @@
   align-items: center;
 }
 
-  .formImput{
-    font-size: 2em;
-    text-align: center;
-    border-radius: 30px;
-    outline: none;
-  }
+.formImput{
+  font-size: 2em;
+  text-align: center;
+  border-radius: 30px;
+  outline: none;
+}
 
 
 .filterForm{
-  padding-top: 5%;
+  padding-top: 24%;
+  padding-bottom: 46%;
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -100,25 +101,18 @@
   width: 100%;
   height: 30em;
 }
+.alignPic{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 .wrap  {
-  height: 20em;
-  width: 20em;
-  padding: 1em;
-  margin-left: .5em;
-}
-
-.sadpanda {
-  margin: 0 auto;
-  padding-left: 2em;
-  border-radius: 2em 2em 2em 2em;
-}
-
-.sadpanda_text {
-  text-align: center;
-  padding-top: .2em;
-  padding-left: 2em;
-  font-size: 1.5em;
-  font-family: 'Indie Flower', cursive;
+  height: 17em;
+  width: 17em;
+  margin-top: 3em;
 }
 @media all and (min-width: 669px) {
   .wrap{
