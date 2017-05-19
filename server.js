@@ -26,7 +26,8 @@ app.get(`/pet/:zip`, function(request, response) {
   console.log('In the beginning of app.get - before request')
   client.query(`
   SELECT * FROM animals
-  WHERE zipcode LIKE $1 || '%' LIMIT 15;`,
+  WHERE zipcode LIKE $1 || '%' LIMIT 100;`,
+
   [ request.params.zip]
 )
   .then(function(result) {
