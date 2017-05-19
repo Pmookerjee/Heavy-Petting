@@ -5,7 +5,7 @@ img{
 h1{
   font-size: 2em;
   width: 100%;
-  font-family: 'Indie Flower';
+  font-family: 'Indie Flower', cursive;
 }
 header{
   background-color: rgb(227, 151, 116);
@@ -21,4 +21,8 @@ footer{
 
 .font{
   font-family: 'Indie Flower', cursive;
+}
+
+#returnString {
+  color:rgb(046, 134, 171);
 }
