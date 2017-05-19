@@ -11,12 +11,17 @@
 
   Pets.requestPet = (zip, callback) => {
     Pets.all = [];
+    
+    $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     $.getJSON(`http://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
 =======
     $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + zip + `&callback=?`)
 >>>>>>> cc5e90268ec6a044a300e3fc1b09c64d45060fe2
+=======
+>>>>>>> 3d13b59dfb6ba1b16a5da242d4ab9fc71fce78fd
    .done(function(data) {
      console.log( 'API request successful');
      console.log(data);
@@ -90,10 +95,14 @@
     return filteredSet;
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 =======
 
 >>>>>>> cc5e90268ec6a044a300e3fc1b09c64d45060fe2
+=======
+
+>>>>>>> 3d13b59dfb6ba1b16a5da242d4ab9fc71fce78fd
  Pets.saveViewed = (petID) => {
     if( localStorage.getItem('Viewed') !== null ){
           viewed = JSON.parse(localStorage.getItem('Viewed'));
@@ -104,10 +113,14 @@
      localStorage.setItem('Viewed', JSON.stringify(viewed));
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 =======
 
 >>>>>>> cc5e90268ec6a044a300e3fc1b09c64d45060fe2
+=======
+
+>>>>>>> 3d13b59dfb6ba1b16a5da242d4ab9fc71fce78fd
 	Pets.saveLike = (petObj) => {
     if( localStorage.getItem('Likes') !== null ){
           likes = JSON.parse(localStorage.getItem('Likes'));
