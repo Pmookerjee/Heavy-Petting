@@ -48,7 +48,7 @@
 
       <img src="assets/pngs/inkcat.png" alt="">
       <section class="title">
-        <h1 class="titleWords">Heavy Petting</h1>
+        <h1 class="titleWords">Love at first Swipe</h1>
         <img class= "titleImg" src="assets/pngs/pawprint.png">
       </section>
       <img src="assets/pngs/inkdog.png" alt="">
@@ -60,8 +60,8 @@
 
 
     <section class="getStart tab-content" id="getStart">
-    <form autocomplete="off" class="filterForm" action="index.html" method="post">
-      <p id="returnString"></p>
+    <form autocomplete="off" class="filterForm" id="filterForm" action="index.html" method="post">
+      <p id="returnString">_</p>
     <label class="subButton" for="zip">Zipcode</label>
     <input type="text" class = "formImput" id = "zip" placeholder="Zip Code" minlength="1" maxlength="5" required>
 
@@ -69,6 +69,7 @@
       <input type="image" src="/assets/pngs/yellowbone.png" id="submit" value="Submit"/>
     </section>
   </form>
+
 </section>
 
 <section class="selectionPage tab-content" id="selectionPage">
@@ -76,56 +77,58 @@
     <a href="/"><img src="/assets/pngs/back.png" alt=""></a>
     <a href="/faves"><img src="/assets/pngs/forward.png" alt=""></a>
   </section>
-  <div class="wrap">
+  <section class="alignPic">
+
+    <div class="wrap">
       <!-- start jtinder container -->
       <div id="tinderslide">
-          <ul id="liAppend">
-              <li class="pane1">
-                  <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-              <li class="pane1">
-                <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-              <li class="pane1">
-                <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-              <li class="pane1">
-                <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-              <li class="pane1">
-                <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
-              </li>
-          </ul>
+        <ul id="liAppend">
+          <li class="pane1">
+            <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
+            <div class="font">Fluffy</div>
+            <div class="like"></div>
+            <div class="dislike"></div>
+          </li>
+          <li class="pane1">
+            <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
+            <div class="font">Fluffy</div>
+            <div class="like"></div>
+            <div class="dislike"></div>
+          </li>
+          <li class="pane1">
+            <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
+            <div class="font">Fluffy</div>
+            <div class="like"></div>
+            <div class="dislike"></div>
+          </li>
+          <li class="pane1">
+            <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
+            <div class="font">Fluffy</div>
+            <div class="like"></div>
+            <div class="dislike"></div>
+          </li>
+          <li class="pane1">
+            <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
+            <div class="font">Fluffy</div>
+            <div class="like"></div>
+            <div class="dislike"></div>
+          </li>
+        </ul>
+        <div id="status"></div>
       </div>
+  </section>
 
       <div class="actions">
         <a href="#" class="dislike" id="dislike"><i></i></a>
         <a href="#" class="like" id="like"><i></i></a>
       </div>
-      <div id="status"></div>
   </div>
 
 
   </section>
 </section>
 
-<section class="faves tab-content">
-  <ul id="faves"></ul>
+<section class="faves tab-content" id="faves">
 
 
 

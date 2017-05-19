@@ -98,10 +98,6 @@
      localStorage.setItem('Likes', JSON.stringify(likes));
     }
 
-  Pets.prototype.toHtml = function () {
-    const template = Handlebars.compile($('#').text());
-    return template(this);
-  };
 
   module.Pets = Pets;
 })(window);
