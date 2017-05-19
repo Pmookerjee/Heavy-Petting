@@ -1,0 +1,159 @@
+#main_container {
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 600px;
+	position: absolute;
+	overflow: hidden;
+	background-color: #121b78;
+}
+
+#main_container #clicktag {
+	width: 300px;
+	height: 600px;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+	background: transparent;
+	cursor: pointer;
+	text-indent: -9999px;
+	z-index: 15000;
+}
+
+#main_container #border {
+	border: 1px solid #666;
+	width: 298px;
+	height: 598px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#main_container #loading { 
+	background-color: black;
+	width: 300px;
+	height: 600px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	z-index: 10000;
+}
+
+.fix_shake {
+	-webkit-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/* BACKGROUND ELEMENTS */
+#main_container .sprite_load {
+	width: 271px;height: 549px;
+	background: transparent url("img/chip_adSoftware_SPRITE.png") no-repeat;
+}
+
+#main_container #chip_initial_bkg {
+	width: 300px;height: 600px;top: 0;left: 0;
+	background: url("img/chip_initial_food.jpg") no-repeat;
+	position: absolute;
+}
+
+#main_container #chip_end_bkg {
+	width: 300px;height: 600px;top: 0px;left: 0px;
+	background: url("img/chip_end_food.jpg") no-repeat;
+	position: absolute;
+}
+
+#main_container #araig_logo {
+	width: 198px;height: 26px;top: 105px;left: 55px;
+	background: url("img/chip_araig_logo.png") no-repeat;
+	position: absolute;
+}
+
+#main_container #chip_roundlogo {
+	width: 240px;height: 53px;top: 45px;left: 32px;
+	background: url("img/chipotle_logo.png") no-repeat;
+	position: absolute;
+}
+
+#main_container #chip_watermark {
+	width: 76px;height: 20px;top: 573px;left: 216px;
+	background: url("img/chip_watermark.png") no-repeat;
+	position: absolute;
+}
+
+
+
+
+/* */
+
+#main_container #bkg_solid {
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 600px;
+	background-color: black;
+	position: absolute;
+}
+
+/* TEXT */
+#main_container #text_1 {
+	width: 163px; height: 107px;top: 12px;left: 68px;
+	background-position: -33px 2px;
+	position: absolute;
+	
+}
+
+#main_container #text_2 {
+	width: 250px; height: 84px;top: 105px;left: 27px;
+	background-position: 0px -101px;
+	position: absolute;
+	
+}
+
+#main_container #text_3_container, #main_container #text_4_container {
+	width: 300px;height: 600px;top: 0;left: 0;position: absolute;
+}
+
+#main_container #text_3A {
+	width: 172px; height: 90px;top: 23px;left: 63px;
+	background-position: -28px -193px;
+	position: absolute;
+	
+}
+
+#main_container #text_4A {
+	width: 194px; height: 172px;top: 21px;left: 50px;
+	background-position: -15px -288px;
+	position: absolute;
+	
+}
+
+/* CTA */
+
+#main_container #chip_ctaTxt {
+	width: 92px;height: 20px;top: 8px;left: 37px;
+	background: url("img/chip_cta_txt.png") no-repeat;
+	position: absolute;
+}
+
+#main_container #cta_container {
+	width: 163px;height: 36px;top: 541px;left: 69px;
+	position: absolute;
+}
+#main_container #cta_stroke {
+	width: inherit;height: inherit;top: 0px;left: 0px;
+	position: absolute;
+	background-color: white;
+}
+
+#main_container #cta_background {
+	width: 159px;height: 32px;top: 2px;left: 2px;
+	position: absolute;
+	background-color: #320F00;
+}
