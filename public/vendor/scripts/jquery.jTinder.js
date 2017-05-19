@@ -199,7 +199,6 @@
 		onDislike: function (item) {
 			// $('#status').html('Pass' + (item.index()+1));
 			$('#status').html('Pass');
-			console.log('item[0].id is ', item[0].id);
 			Pets.saveViewed(item[0].id);
 		},
 		onLike: function (item) {
@@ -214,7 +213,6 @@
 				var petsAllIds = Pets.all[i].id;
 
 				if (zipStringId === (Pets.all[i].id).toString()) {
-
 				  Pets.saveLike(Pets.all[i]);
 					Pets.saveViewed(Pets.all[i].id);
 				}

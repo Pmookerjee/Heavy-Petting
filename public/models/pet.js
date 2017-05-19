@@ -68,6 +68,7 @@
           Pets.all = Pets.filterOutViewedPets();
         }
         toDom.renderToCards();
+
         $("#tinderslide").jTinder();
       })
   };
@@ -84,8 +85,8 @@
     })
     return filteredSet;
  }
-
-  Pets.saveViewed = (petID) => {
+ 
+ Pets.saveViewed = (petID) => {
     if( localStorage.getItem('Viewed') !== null ){
           viewed = JSON.parse(localStorage.getItem('Viewed'));
       } else {
@@ -94,7 +95,7 @@
       viewed.push(petID);
      localStorage.setItem('Viewed', JSON.stringify(viewed));
     }
-
+ 
 	Pets.saveLike = (petObj) => {
     if( localStorage.getItem('Likes') !== null ){
           likes = JSON.parse(localStorage.getItem('Likes'));
@@ -103,7 +104,7 @@
       }
       likes.push(petObj);
      localStorage.setItem('Likes', JSON.stringify(likes));
-    }
+   }
 
   module.Pets = Pets;
 })(window);
