@@ -11,11 +11,9 @@ Faves.render = Handlebars.compile($('#favesTemplate').html());
 Faves.renderFaves = () => {
    Faves.all = JSON.parse(localStorage.getItem('Likes'));
   console.log("in render FAVES");
-  // Faves.all.forEach(fave => {
-  //   // if(Pets.all.idindexOf(fave)))
-  //
-  //   $('#faves').append(Faves.render(pet));
-  // });
+  Faves.all.forEach(fave => {
+    $('#renderToFaves').append(Faves.render(fave));
+  });
 }
 
 module.Faves = Faves;

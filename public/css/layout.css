@@ -40,6 +40,16 @@
   align-items: center;
 }
 
+.arrowleft{
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
+.arrowright{
+  padding-right: 1em;
+  padding-top: 1em;
+}
+
 .formImput{
   font-size: 2em;
   text-align: center;
@@ -109,10 +119,49 @@
   width: 17em;
   margin-top: 3em;
 }
+
+.faves{
+  height: 1000px;
+}
+.arrowfaves{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: left;
+  align-items: left;
+}
+.favesHead{
+  line-height: 5em;
+  text-align: center;
+  text-decoration: underline;
+  background-image:;
+}
 footer{
   height: 6em;
 }
 @media all and (min-width: 669px) {
+  .selectionPage {
+    height: 50em;
+  }
+  .favesHead{
+    line-height: 22em;
+    text-align: center;
+    text-decoration: underline;
+    background-image: url('/assets/pngs/animals.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 219px;
+  }
+  .favestitle{
+    vertical-align: text-bottom;
+  }
+  .inkdog{
+    height: 9em;
+  }
+  .inkcat{
+    height: 9em;
+  }
   .wrap{
     margin-left: 1em;
     height: 32vw;
@@ -122,7 +171,7 @@ footer{
   }
   .filterForm {
     padding-top: 16%;
-padding-bottom: 22%;
+    padding-bottom: 22%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -134,4 +183,5 @@ padding-bottom: 22%;
   footer{
     height: 10em;
   }
+
 }

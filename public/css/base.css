@@ -3,6 +3,7 @@ img{
 }
 
 h1{
+  font-weight: 600;
   font-size: 2em;
   width: 100%;
   font-family: 'Indie Flower', cursive;
@@ -24,4 +25,17 @@ footer{
 
 #returnString {
   color:rgb(046, 134, 171);
+}
+
+.faves{
+  background-color: rgb(046, 134, 171);
+}
+
+@media all and (min-width: 669px) {
+  h1{
+    font-weight: 600;
+    font-size: 7em;
+    width: 100%;
+    font-family: 'Indie Flower', cursive;
+  }
 }

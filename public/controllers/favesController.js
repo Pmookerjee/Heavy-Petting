@@ -8,7 +8,6 @@
     $('.tab-content').hide();
     $('#faves').fadeIn();
 
-    Faves.render();
     Faves.renderFaves();
 
   };
