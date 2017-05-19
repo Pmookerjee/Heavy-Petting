@@ -31,6 +31,10 @@ footer{
   background-color: rgb(046, 134, 171);
 }
 
+/*.wrapfaves{
+  background-color: rgb(046, 134, 171);
+}*/
+
 @media all and (min-width: 669px) {
   h1{
     font-weight: 600;

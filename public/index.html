@@ -31,11 +31,15 @@
   </script>
 
   <script id="favesTemplate" type="text/x-handlebars-template">
+    <section class = "wrapfaves">
+      <section id="tinderslide">
     <li class="pane1">
       <div class="img"><img class="img" src="{{photo}}" alt=""></div>
       <div class="font">{{name}}</div>
       <div class="like"></div>
     </li>
+  </section>
+  </section>
   </script>
 
 </head>
@@ -135,14 +139,11 @@
     <section class="favesHead">
       <h1 class="favestitle">Your Faves</h1>
     </section>
-    <div class="wrap">
-      <section id="tinderslide">
 
-        <ul id="renderToFaves">
+
+        <ul id="renderToFaves" class="flexfaves">
 
         </ul>
-      </section>
-    </div>
 
   </section>
 
