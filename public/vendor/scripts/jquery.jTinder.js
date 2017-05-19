@@ -214,6 +214,7 @@
 
 				if (zipStringId === (Pets.all[i].id).toString()) {
 				  Pets.saveLike(Pets.all[i]);
+					Pets.saveViewed(Pets.all[i].id);
 				}
 			}
 		},

@@ -20,24 +20,13 @@ const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
-// app.get('/*', function(request, response) {
-//   response.sendFile(__dirname + '/public/index.html');
-// });
-//
-// // app.get('/faves', (request, response) => response.sendFile('faves.html', {root: './public'}));
-// // app.get('/pet', (request, response) => response.sendFile('pet.html', {root: './public'}));
-//
-// app.listen(PORT, function(){
-//   console.log('Server is running on port: ' + PORT);
-// });
-
 loadDB();
 
 app.get(`/pet/:zip`, function(request, response) {
   console.log('In the beginning of app.get - before request')
   client.query(`
   SELECT * FROM animals
-  WHERE zipcode LIKE $1 || '%' LIMIT 100;`,
+  WHERE zipcode LIKE $1 || '%' LIMIT 15;`,
   [ request.params.zip]
 )
   .then(function(result) {
@@ -78,7 +67,7 @@ function loadDB() {
   client.query(`
     CREATE TABLE IF NOT EXISTS
      animals (
-      id VARCHAR(255),
+      id VARCHAR(255) UNIQUE,
       animal VARCHAR(255),
       breed VARCHAR(255),
       name VARCHAR (255),
