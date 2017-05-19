@@ -37,7 +37,7 @@ app.get(`/pet/:zip`, function(request, response) {
   console.log('In the beginning of app.get - before request')
   client.query(`
   SELECT * FROM animals
-  WHERE zipcode LIKE $1 || '%' LIMIT 100;`,
+  WHERE zipcode LIKE $1 || '%' LIMIT 15;`,
   [ request.params.zip]
 )
   .then(function(result) {
@@ -78,7 +78,7 @@ function loadDB() {
   client.query(`
     CREATE TABLE IF NOT EXISTS
      animals (
-      id VARCHAR(255),
+      id VARCHAR(255) UNIQUE,
       animal VARCHAR(255),
       breed VARCHAR(255),
       name VARCHAR (255),

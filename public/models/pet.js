@@ -58,25 +58,32 @@
    });
 }
 
-
   Pets.fetchByZipcode = function(){
     $.get(`/pet/` + Pets.zip)
     .then(
       results => {
         console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
-        // Pets.filterOutViewedPets();
+        if(localStorage.getItem('Viewed')!== null){
+          Pets.all = Pets.filterOutViewedPets();
+        }
         toDom.renderToCards();
-
         $("#tinderslide").jTinder();
-      }
-    )
+      })
   };
 
   Pets.loadAll = rows => {
     Pets.all = rows.map(pet => new Pets(pet));
   };
 
+ Pets.filterOutViewedPets =() => {
+   var viewed = [];
+    viewed = JSON.parse(localStorage.getItem('Viewed'));
+    let filteredSet = Pets.all.filter(pet => {
+      return (viewed.indexOf(pet.id) <0 );
+    })
+    return filteredSet;
+ }
 
   Pets.saveViewed = (petID) => {
     if( localStorage.getItem('Viewed') !== null ){
@@ -97,11 +104,6 @@
       likes.push(petObj);
      localStorage.setItem('Likes', JSON.stringify(likes));
     }
-
-  Pets.prototype.toHtml = function () {
-    const template = Handlebars.compile($('#').text());
-    return template(this);
-  };
 
   module.Pets = Pets;
 })(window);
