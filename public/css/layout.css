@@ -109,11 +109,16 @@
   width: 17em;
   margin-top: 3em;
 }
+footer{
+  height: 6em;
+}
 @media all and (min-width: 669px) {
   .wrap{
     margin-left: 1em;
-    height: 22em;
-    width: 25em;
+    height: 32vw;
+    width: 51vw;
+    max-width: 39%;
+    max-height: 23%;
   }
   .filterForm {
     padding-top: 21%;
@@ -124,5 +129,9 @@
     justify-content: center;
     align-content: space-between;
     align-items: center;
+  }
+
+  footer{
+    height: 10em;
   }
 }
