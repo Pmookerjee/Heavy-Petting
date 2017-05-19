@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
-const conString = 'postgres://tom:password@localhost:5432/pets';
+const conString = process.env.DATABASE_URL || 'postgres://paulamookerjee@localhost:5432/pets';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -82,7 +82,6 @@ function loadDB() {
   )
   .then()
   .catch(console.error);
-
 }
 
 app.get('/*', function(request, response) {
