@@ -9,6 +9,12 @@
   Pets.zip = '';
   let viewed = [], likes = [], dislikes = [];
 
+  // let Pets.url = window.location;
+  // if(Pets.url.indexOf('#')!=-1){
+  //    window.location = 'index.html';
+  // }
+
+
   Pets.requestPet = (zip, callback) => {
     Pets.all = [];
 

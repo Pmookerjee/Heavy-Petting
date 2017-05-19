@@ -15,21 +15,19 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
-const conString = 'postgres://paulamookerjee@localhost:5432/pets';
+
+const conString = 'postgres://tom:myPassword@localhost:5432/pets';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
-// app.get('*', function(request, response) {
-//   response.sendFile(__dirname + '/public/index.html');
-// });
+
+
 // app.get('/petFinder/*', proxyPetFinder);
 // app.get('/faves', (request, response) => response.sendFile('faves.html', {root: './public'}));
 // app.get('/pet', (request, response) => response.sendFile('pet.html', {root: './public'}));
 
-app.listen(PORT, function(){
-  console.log('Server is running on port: ' + PORT);
-});
+
 
 loadDB();
 
@@ -93,6 +91,8 @@ function loadDB() {
   .then()
   .catch(console.error);
 
+
+
   // client.query(`
   //   CREATE TABLE IF NOT EXISTS
   //   zipcode (
@@ -103,3 +103,11 @@ function loadDB() {
   // .then(loadZipcodes)
   // .catch(console.error);
 }
+
+app.get('/*', (request, response) => {
+  response.sendFile(__dirname + '/public/index.html');
+});
+
+app.listen(PORT, function(){
+  console.log('Server is running on port: ' + PORT);
+});
