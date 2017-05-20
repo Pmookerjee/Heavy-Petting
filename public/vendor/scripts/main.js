@@ -4,7 +4,6 @@ $("#tinderslide").jTinder({
     Pets.saveViewed(item[0].id);
   },
   onLike: function (item) {
-    console.log(Pets.all);
     $('#status').html('Saved to Favorites!');
     var zipStringId = item[0].id;
     for (var i in Pets.all) {
