@@ -11,7 +11,7 @@
 
   Pets.requestPet = (callback) => {
     Pets.all = [];
-
+    
     $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + Pets.zip + `&callback=?`)
     .done(function(data) {
       console.log( 'API request successful');
@@ -76,18 +76,18 @@
       }
     };
 
-    Pets.filterOutViewedPets =() => {
-      var viewed = [];
-      viewed = JSON.parse(localStorage.getItem('Viewed'));
-      let filteredSet = Pets.all.filter(pet => {
-        return (viewed.indexOf(pet.id) <0 );
-      })
-      return filteredSet;
-    }
-
-    Pets.saveViewed = (petID) => {
-      if( localStorage.getItem('Viewed') !== null ){
-        viewed = JSON.parse(localStorage.getItem('Viewed'));
+ Pets.filterOutViewedPets =() => {
+   var viewed = [];
+    viewed = JSON.parse(localStorage.getItem('Viewed'));
+    let filteredSet = Pets.all.filter(pet => {
+      return (viewed.indexOf(pet.id) <0 );
+    })
+    return filteredSet;
+ }
+ 
+ Pets.saveViewed = (petID) => {
+    if( localStorage.getItem('Viewed') !== null ){
+          viewed = JSON.parse(localStorage.getItem('Viewed'));
       } else {
         viewed = [];
       }
