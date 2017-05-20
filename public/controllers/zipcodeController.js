@@ -5,7 +5,7 @@
   zipcodeController.index = () => {
 
     $('.tab-content').hide();
-    $('#getStart').fadeIn();
+    $('#getStart').show();
   };
 
   module.zipcodeController = zipcodeController;
