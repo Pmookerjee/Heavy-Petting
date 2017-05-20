@@ -193,7 +193,7 @@ footer{
 }
 .close{
   float: right;
-  height: 10%;
+  height: 30%;
   z-index: 10000000000;
 }
 

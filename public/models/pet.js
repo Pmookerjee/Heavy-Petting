@@ -62,7 +62,6 @@
     $.get(`/pet/` + Pets.zip)
     .then(
       results => {
-        console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
         toDom.renderToCards();
         $("#tinderslide").jTinder();
@@ -96,6 +95,7 @@
     }
 
     Pets.removeFromLikes = (petId) => {
+      console.log('in the removeFromLikes');
       likes = JSON.parse(localStorage.getItem('Likes'));
       let filteredSet = likes.filter(like => {
       return (like.id !== petId);

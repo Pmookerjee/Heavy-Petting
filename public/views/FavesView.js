@@ -9,6 +9,7 @@ Faves.all = [];
 Faves.render = Handlebars.compile($('#favesTemplate').html());
 
 Faves.renderFaves = () => {
+  console.log('in renderFaves');
    if(localStorage.getItem('Likes') === null){
      console.log('there is nothing in local storage');
      let imgPlaceholder = '<img class="empty-faves-pic" src="assets/oops.jpg"></img>';
@@ -37,8 +38,9 @@ $('#home').on('click', function(event){
 
 $(document).on('click', '.close', function(event){
   event.preventDefault();
-  console.log('this is ');
-  Pets.removeFromLikes(petID);
+  let petId = $(this).attr('id');
+  Pets.removeFromLikes(petId);
+  location.reload();
 });
 
 module.Faves = Faves;
