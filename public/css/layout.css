@@ -145,6 +145,11 @@
   justify-content: space-around;
   align-content: center;
   align-items: center;
+
+.sadpanda {
+  margin: 0 auto;
+  margin-left: 2em;
+  border-radius: 2em 2em 2em 2em;
 }
 
 .trashbottom{
@@ -156,6 +161,7 @@
 footer{
   height: 6em;
 }
+
 @media all and (min-width: 669px) {
   .selectionPage {
     height: 50em;

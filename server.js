@@ -2,34 +2,19 @@
 
 const express = require('express');
 const pg = require('pg');
-const fs = require('fs');
-const requestProxy = require('express-request-proxy');
 const app = express();
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/public'));
 
 
 const PORT = process.env.PORT || 3000;
-
-app.use(express.static(__dirname + '/public'));
-
-const conString = 'postgres://tom:password@localhost:5432/pets';
+const conString = process.env.DATABASE_URL || 'postgres://tom:password@localhost:5432/pets';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
-
-// app.get('/*', function(request, response) {
-//   response.sendFile(__dirname + '/public/index.html');
-// });
-//
-// // app.get('/faves', (request, response) => response.sendFile('faves.html', {root: './public'}));
-// // app.get('/pet', (request, response) => response.sendFile('pet.html', {root: './public'}));
-//
-// app.listen(PORT, function(){
-//   console.log('Server is running on port: ' + PORT);
-// });
 
 loadDB();
 
@@ -78,7 +63,7 @@ function loadDB() {
   client.query(`
     CREATE TABLE IF NOT EXISTS
      animals (
-      id VARCHAR(255),
+      id VARCHAR(255) UNIQUE,
       animal VARCHAR(255),
       breed VARCHAR(255),
       name VARCHAR (255),
@@ -93,24 +78,11 @@ function loadDB() {
   )
   .then()
   .catch(console.error);
-
-  // client.query(`
-  //   CREATE TABLE IF NOT EXISTS
-  //   zipcode (
-  //     id INTEGER NOT NULL REFERENCES pets(zipcode_id),
-  //     location VARCHAR(255) NOT NULL,
-  //   );`
-  // )
-  // .then(loadZipcodes)
-  // .catch(console.error);
 }
 
 app.get('/*', function(request, response) {
   response.sendFile(__dirname + '/public/index.html');
 });
-
-// app.get('/faves', (request, response) => response.sendFile('faves.html', {root: './public'}));
-// app.get('/pet', (request, response) => response.sendFile('pet.html', {root: './public'}));
 
 app.listen(PORT, function(){
   console.log('Server is running on port: ' + PORT);
