@@ -5,7 +5,7 @@
     Object.keys(petInfo).forEach(key => this[key] = petInfo[key]);
   }
 
-  let count = 100;
+  let count = 50;
   Pets.zip = '';
   let viewed = [], likes = [];
 
@@ -100,7 +100,11 @@
       return (like.id !== petId);
       })
       console.log('filteredset is ', filteredSet);
+      if(filteredSet.length === 0){
+        localStorage.removeItem('Likes');
+      } else {
       localStorage.setItem('Likes', JSON.stringify(filteredSet));
+      }
     }
 
     Pets.saveLike = (petObj) => {

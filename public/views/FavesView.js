@@ -25,7 +25,7 @@
 
   $('#clearall').on('click', function(event){
     event.preventDefault();
-    localStorage.clear();
+    localStorage.removeItem('Likes');
     window.location.reload(false);
     page('/faves');
   });
