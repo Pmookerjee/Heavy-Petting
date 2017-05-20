@@ -176,6 +176,9 @@
 			else if ($.isFunction(Plugin.prototype[options])) {
 				$.data(this, 'plugin_' + pluginName)[options]();
 			}
+			if (!$.data(this, "plugin_" + pluginName)) {
+				$.data(this, "plugin_" + pluginName, new Plugin(this, options));
+			}
 			else {
 				$.data(this, "plugin_" + pluginName).bindNew(this);
 			}
