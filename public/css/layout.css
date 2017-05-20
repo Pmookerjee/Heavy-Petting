@@ -1,4 +1,3 @@
-
 .wrapper{
   width: 100%;
   border-style: dashed;
@@ -22,18 +21,14 @@
   background-position: center;
   text-align: center;
 }
+
 .titleImg{
-  width: 11em;
+  width: 15em;
 }
 
 .titleWords{
   border-style: dashed;
   display: block;
-}
-
-.pawTop{
-  margin-left: 1em;
-  margin-top: 1em;
 }
 
 .splitArrows{
@@ -45,16 +40,27 @@
   align-items: center;
 }
 
-  .formImput{
-    font-size: 2em;
-    text-align: center;
-    border-radius: 30px;
-    outline: none;
-  }
+.arrowleft{
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
+.arrowright{
+  padding-right: 1em;
+  padding-top: 1em;
+}
+
+.formImput{
+  font-size: 2em;
+  text-align: center;
+  border-radius: 30px;
+  outline: none;
+}
 
 
 .filterForm{
-  padding-top: 5%;
+  padding-top: 24%;
+  padding-bottom: 10%;
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -91,6 +97,18 @@
   align-items: flex-end;
 }
 
+.empty-faves-pic {
+  padding: 1em 0 1em;
+  max-width: 80%;
+  width: 100%;
+}
+
+.empty-faves-text {
+  font-size: 2em;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
+
 .pawBottom{
   margin-right: 1em;
   margin-bottom: 1em;
@@ -100,34 +118,141 @@
   width: 100%;
   height: 30em;
 }
+.alignPic{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 .wrap  {
-  height: 20em;
-  width: 20em;
-  padding: 1em;
-  margin-left: .5em;
+  height: 17em;
+  width: 17em;
+  margin-top: 3em;
+}
+.arrowfaves{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: left;
+  align-items: left;
+}
+.favesHead{
+  text-align: center;
+  text-decoration: underline;
+  background-image:;
+}
+.wrapfaves{
+  margin-top: 3em;
+  height: 81vw;
+  width: 81vw;
 }
 
+.flexfaves{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.swing-faves:hover {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: all 1.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+.show-faves:hover {
+  opacity: 1;
+  transform: rotateY(-180deg);
+  transition: all 1.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+/*.show_result {
+  opacity: 1;
+  transform: rotateY(360deg);
+  transition: all 1.5s cubic-bezier(.36,-0.64,.34,1.76);
+}*/
 .sadpanda {
   margin: 0 auto;
   margin-left: 2em;
   border-radius: 2em 2em 2em 2em;
 }
 
-.sadpanda_text {
-  text-align: center;
-  padding-top: .2em;
-  padding-left: 2em;
-  font-size: 1.5em;
-  font-family: 'Indie Flower', cursive;
+.trashbottom{
+  padding-left: 1em;
+  margin-top: 1em;
+}
+
+footer{
+  height: 6em;
+}
+.close{
+  float: right;
+  height: 26%;
+  z-index: 10000000000;
 }
 
 @media all and (min-width: 669px) {
-  .wrap{
-    margin-left: 21em;
+  .selectionPage {
+    height: 50em;
   }
+  .favesHead{
+    line-height: 22em;
+    text-align: center;
+    text-decoration: underline;
+    background-image: url('/assets/pngs/animals.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 219px;
+  }
+  .favestitle{
+    vertical-align: text-bottom;
+  }
+  .inkdog{
+    height: 9em;
+  }
+  .inkcat{
+    height: 9em;
+  }
+  .wrap{
+    margin-left: 1em;
+    height: 32vw;
+    width: 51vw;
+    max-width: 39%;
+    max-height: 23%;
+  }
+  .wrapfaves{
+    margin-top: 3em;
+    height: 30vw;
+    width: 23vw;
+  }
+
+  .flexfaves{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+  }
+  .empty-faves-pic {
+    max-width: 78%;
+    width: 100%;
+    padding: 2.7em 0 2.5em;
+  }
+
+  .empty-faves-text {
+    font-size: 3em;
+    text-align: center;
+  }
+
   .filterForm {
-    padding-top: 0%;
-    padding-bottom: 0%;
+    padding-top: 16%;
+    padding-bottom: 22%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -135,4 +260,9 @@
     align-content: space-between;
     align-items: center;
   }
+
+  footer{
+    height: 10em;
+  }
+
 }

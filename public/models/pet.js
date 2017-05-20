@@ -5,13 +5,38 @@
     Object.keys(petInfo).forEach(key => this[key] = petInfo[key]);
   }
 
-  let count = 150;
+  let count = 100;
   Pets.zip = '';
   let viewed = [], likes = [];
 
   Pets.requestPet = (callback) => {
     Pets.all = [];
-    
+
+    $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + Pets.zip + `&callback=?`)
+    .done(function(data) {
+      console.log( 'API request successful');
+      console.log(data);
+
+      /*******IF THERE ARE NO OBJECTS FOR THAT ZIPCODE:********/
+      if(!data.petfinder.pets) {
+        $('#liAppend').append(`<img class="sadpanda" src="../assets/pngs/sadpanda.jpg"></img`)
+        $('#liAppend').append(`<p class="sadpanda_text">Sorry, there are no nearby pets in that zipcode :(</p>`)
+      } else {
+        let length = data.petfinder.pets.pet.length;
+
+        for (var i = 0; i < length; i++){
+          let shortDescrip = 'No description available', photoPlaceholder = 'assets/pngs/photoPlaceholder.png';
+          if(data.petfinder.pets.pet[i].description['$t']) {
+            shortDescrip = data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 50);
+          }
+          if(data.petfinder.pets.pet[i].media.photos) {
+            photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
+          }
+
+          //  let fullZip = data.petfinder.pets.pet[0].contact.zip['$t'];
+          Pets.zip = Pets.zip.substr(0,3);
+          console.log('zipcode substr in requestPet is: ', Pets.zip);
+
     $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + Pets.zip + `&callback=?`)
     .done(function(data) {
       console.log( 'API request successful');
@@ -62,7 +87,6 @@
     $.get(`/pet/` + Pets.zip)
     .then(
       results => {
-        console.log('In the fetchByZipcode ajax request')
         Pets.loadAll(results);
         toDom.renderToCards();
         $("#tinderslide").jTinder();
@@ -76,23 +100,32 @@
       }
     };
 
- Pets.filterOutViewedPets =() => {
-   var viewed = [];
-    viewed = JSON.parse(localStorage.getItem('Viewed'));
-    let filteredSet = Pets.all.filter(pet => {
-      return (viewed.indexOf(pet.id) <0 );
-    })
-    return filteredSet;
- }
- 
- Pets.saveViewed = (petID) => {
-    if( localStorage.getItem('Viewed') !== null ){
-          viewed = JSON.parse(localStorage.getItem('Viewed'));
+    Pets.filterOutViewedPets =() => {
+      var viewed = [];
+      viewed = JSON.parse(localStorage.getItem('Viewed'));
+      let filteredSet = Pets.all.filter(pet => {
+        return (viewed.indexOf(pet.id) <0 );
+      })
+      return filteredSet;
+    }
+
+    Pets.saveViewed = (petID) => {
+      if( localStorage.getItem('Viewed') !== null ){
+        viewed = JSON.parse(localStorage.getItem('Viewed'));
       } else {
         viewed = [];
       }
       viewed.push(petID);
       localStorage.setItem('Viewed', JSON.stringify(viewed));
+    }
+
+    Pets.removeFromLikes = (petId) => {
+      likes = JSON.parse(localStorage.getItem('Likes'));
+      let filteredSet = likes.filter(like => {
+      return (like.id !== petId);
+      })
+      console.log('filteredset is ', filteredSet);
+      localStorage.setItem('Likes', JSON.stringify(filteredSet));
     }
 
     Pets.saveLike = (petObj) => {

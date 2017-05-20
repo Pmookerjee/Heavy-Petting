@@ -1,0 +1,19 @@
+.img__wrap {
+  position: relative;
+  height: 85%;
+  width: 100%;
+}
+
+.description {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .description {
+  visibility: visible;
+  opacity: 1;
+}
