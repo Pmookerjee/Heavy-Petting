@@ -1,4 +1,3 @@
-
 .wrapper{
   width: 100%;
   border-style: dashed;
@@ -145,7 +144,7 @@
   justify-content: space-around;
   align-content: center;
   align-items: center;
-
+}
 .sadpanda {
   margin: 0 auto;
   margin-left: 2em;
