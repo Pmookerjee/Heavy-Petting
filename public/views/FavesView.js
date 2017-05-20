@@ -35,15 +35,10 @@ $('#home').on('click', function(event){
   page('/');
 });
 
-$(document).on('click', '#close', function(event){
+$(document).on('click', '.close', function(event){
   event.preventDefault();
-  console.log('this is ');
+  console.log($(this).attr('id'));
 });
-// $('#totop').on('click', function(event){
-//   $('html, body').animate({
-//        scrollTop: $(".favesHead").offset().top
-//    }, 2000);
-// });
 
 module.Faves = Faves;
 

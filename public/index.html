@@ -22,7 +22,7 @@
   </script>
 
   <script id="favesTemplate" type="text/x-handlebars-template">
-    <section class = "wrapfaves">
+    <section class = "wrapfaves" id={{id}}>
       <section id="tinderslide">
         <li class="pane1">
           <section class="img__wrap">
@@ -36,7 +36,7 @@
             </section>
             <div class="img imgfade"><img class="img  swing-faves" src="{{photo}}" alt=""></div>
           </section>
-          <a id="close" href="#"><img class="close" src="/assets/pngs/close.png" alt=""></a>
+          <a id="{{id}}" class="close" href="#"><img class="close" src="/assets/pngs/close.png" alt=""></a>
           <div class="font">{{name}}</div>
           <div class="like"></div>
         </li>
@@ -152,9 +152,6 @@
     <ul id="renderToFaves" class="flexfaves">
 
     </ul>
-
-    <!-- <a id="totop" href="#"><img  class="trashbottom" src="/assets/pngs/uparrow.png" alt=""></a> -->
-
 
   </section>
 
