@@ -172,14 +172,9 @@
 		this.each(function () {
 			if (!$.data(this, "plugin_" + pluginName)) {
 				$.data(this, "plugin_" + pluginName, new Plugin(this, options));
-			}
-			else if ($.isFunction(Plugin.prototype[options])) {
+			}else if ($.isFunction(Plugin.prototype[options])) {
 				$.data(this, 'plugin_' + pluginName)[options]();
-			}
-			if (!$.data(this, "plugin_" + pluginName)) {
-				$.data(this, "plugin_" + pluginName, new Plugin(this, options));
-			}
-			else {
+			}else {
 				$.data(this, "plugin_" + pluginName).bindNew(this);
 			}
 		});
