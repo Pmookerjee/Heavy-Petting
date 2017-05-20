@@ -2,11 +2,11 @@
 
 (module => {
 
-const Faves = {};
-Faves.all = [];
+  const Faves = {};
+  Faves.all = [];
 
 
-Faves.render = Handlebars.compile($('#favesTemplate').html());
+  Faves.render = Handlebars.compile($('#favesTemplate').html());
 
 Faves.renderFaves = () => {
    if(localStorage.getItem('Likes') === null){
@@ -37,7 +37,7 @@ $('#home').on('click', function(event){
 
 $(document).on('click', '.close', function(event){
   event.preventDefault();
-  console.log('this is ');
+  let petId = $(this).attr('id');
   Pets.removeFromLikes(petID);
 });
 

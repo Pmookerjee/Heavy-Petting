@@ -6,19 +6,11 @@
   <link rel="stylesheet" type="text/css" href="/vendor/styles/jTinder.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="/css/modules.css">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rasa" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Love at First Swipe</title>
-
-  <script id="resultsTemplate" type="text/x-handlebars-template">
-    <h1>{{name}}</h1>
-    <p>Age: {{age}}</p>
-    <p>Animal Type: {{animal}}</p>
-    <p>Description: {{description}}</p>
-    <p>Size: {{size}}</p>
-    <p>Sex: {{sex}}</p>
-    <p>Zip Code: {{contact}}</p>
-  </script>
 
   <script id="cardTemplate" type="text/x-handlebars-template">
     <li class="pane1" id="{{id}}">
@@ -30,16 +22,26 @@
   </script>
 
   <script id="favesTemplate" type="text/x-handlebars-template">
-    <section class = "wrapfaves">
+    <section class = "wrapfaves" id={{id}}>
       <section id="tinderslide">
-    <li class="pane1">
-      <div class="img"><img class="img swing-faves" src="{{photo}}" alt=""></div>
-      <img id="close" src="/assets/pngs/close.png" alt="">
-      <div class="font">{{name}}</div>
-      <div class="like"></div>
-    </li>
-  </section>
-  </section>
+        <li class="pane1">
+          <section class="img__wrap">
+            <section class="description">
+              <p>Age: {{age}}</p>
+              <p>Sex: {{sex}}</p>
+              <p>Size: {{size}}</p>
+              <p>Animal Type: {{animal}}</p>
+              <p>Description: {{description}}</p>
+              <a href="{{email}}"><p>Contact:</p> {{email}}</a>
+            </section>
+            <div class="img imgfade"><img class="img  swing-faves" src="{{photo}}" alt=""></div>
+          </section>
+          <a id="{{id}}" class="close" href="#"><img class="close" src="/assets/pngs/close.png" alt=""></a>
+          <div class="font">{{name}}</div>
+          <div class="like"></div>
+        </li>
+      </section>
+    </section>
   </script>
 
 </head>
@@ -147,12 +149,7 @@
     </section>
 
 
-        <ul id="renderToFaves" class="flexfaves">
-
-        </ul>
-
-        <!-- <a id="totop" href="#"><img  class="trashbottom" src="/assets/pngs/uparrow.png" alt=""></a> -->
-
+    <ul id="renderToFaves" class="flexfaves"></ul>
 
   </section>
 
