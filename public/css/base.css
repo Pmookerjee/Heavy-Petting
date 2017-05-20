@@ -4,9 +4,10 @@ img{
 }
 
 h1{
+  font-weight: 600;
   font-size: 2em;
   width: 100%;
-  font-family: 'Indie Flower';
+  font-family: 'Indie Flower', cursive;
 }
 header{
   background-color: rgb(227, 151, 116);
@@ -16,8 +17,7 @@ header{
   background-color: rgb(046, 134, 171);
 }
 footer{
-  background-color: rgb(238, 238, 238);
-  height: 6em;
+  background-color: rgb(046, 134, 171);
 }
 
 .font{
@@ -28,4 +28,25 @@ footer{
 input {
   outline: none;
   text-decoration: none;
+}
+
+#returnString {
+  color:rgb(046, 134, 171);
+}
+
+.faves{
+  background-color: rgb(046, 134, 171);
+}
+
+/*.wrapfaves{
+  background-color: rgb(046, 134, 171);
+}*/
+
+@media all and (min-width: 669px) {
+  h1{
+    font-weight: 600;
+    font-size: 7em;
+    width: 100%;
+    font-family: 'Indie Flower', cursive;
+  }
 }

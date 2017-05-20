@@ -176,9 +176,6 @@
 			else if ($.isFunction(Plugin.prototype[options])) {
 				$.data(this, 'plugin_' + pluginName)[options]();
 			}
-			if (!$.data(this, "plugin_" + pluginName)) {
-				$.data(this, "plugin_" + pluginName, new Plugin(this, options));
-			}
 			else {
 				$.data(this, "plugin_" + pluginName).bindNew(this);
 			}
@@ -186,6 +183,7 @@
 
 		return this;
 	};
+
 
 	$('#dislike').on('click', function(event){
 		$("#tinderslide").jTinder('dislike');
@@ -204,14 +202,9 @@
 		onLike: function (item) {
 			// $('#status').html('Save ' + (item.index()+1) + ' to Favorites');
 			$('#status').html('Saved to Favorites!');
-
-
 			var zipStringId = item[0].id;
-
 			for (var i in Pets.all) {
-
 				var petsAllIds = Pets.all[i].id;
-
 				if (zipStringId === (Pets.all[i].id).toString()) {
 				  Pets.saveLike(Pets.all[i]);
 					Pets.saveViewed(Pets.all[i].id);

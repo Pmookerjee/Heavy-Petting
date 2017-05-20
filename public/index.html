@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="/vendor/styles/jTinder.css">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Heavy Petting</title>
+  <title>Love at First Swipe</title>
+  <link rel="stylesheet" href="css/base.css">
 
   <script id="resultsTemplate" type="text/x-handlebars-template">
     <h1>{{name}}</h1>
@@ -19,23 +19,27 @@
     <p>Size: {{size}}</p>
     <p>Sex: {{sex}}</p>
     <p>Zip Code: {{contact}}</p>
-</script>
+  </script>
 
   <script id="cardTemplate" type="text/x-handlebars-template">
     <li class="pane1" id="{{id}}">
-        <div class="img"><img class="img" src="{{photo}}" alt=""></div>
-        <div class="font">{{name}}</div>
-        <div class="like"></div>
-        <div class="dislike"></div>
+      <div class="img"><img class="img" src="{{photo}}" alt=""></div>
+      <div class="font">{{name}}</div>
+      <div class="like"></div>
+      <div class="dislike"></div>
     </li>
   </script>
 
   <script id="favesTemplate" type="text/x-handlebars-template">
+    <section class = "wrapfaves">
+      <section id="tinderslide">
     <li class="pane1">
-        <div class="img"><img class="img" src="{{photo}}" alt=""></div>
-        <div class="font">{{name}}</div>
-        <div class="like"></div>
+      <div class="img"><img class="img" src="{{photo}}" alt=""></div>
+      <div class="font">{{name}}</div>
+      <div class="like"></div>
     </li>
+  </section>
+  </section>
   </script>
 
 </head>
@@ -46,12 +50,12 @@
   <section class="wrapper">
     <header class="header">
 
-      <img src="assets/pngs/inkcat.png" alt="">
+      <img id="ink" class="inkcat" src="assets/pngs/inkcat.png" alt="">
       <section class="title">
-        <h1 class="titleWords">Heavy Petting</h1>
+        <h1 class="titleWords">Love at First Swipe</h1>
         <img class= "titleImg" src="assets/pngs/pawprint.png">
       </section>
-      <img src="assets/pngs/inkdog.png" alt="">
+      <img id="ink" class="inkdog" src="assets/pngs/inkdog.png" alt="">
 
     </header>
   </section>
@@ -60,112 +64,128 @@
 
 
     <section class="getStart tab-content" id="getStart">
-      <img class ="pawTop" src="/assets/pngs/pawprint_files/58aeff90c869e092af51ee71.png" alt="">
-    <form autocomplete="off" class="filterForm" action="index.html" method="post">
-      <p id="returnString"></p>
-    <label class="subButton" for="zip">Zipcode</label>
-    <input type="text" class = "formImput" id = "zip" placeholder="Zip Code" minlength="1" maxlength="5" required>
+      <section class="splitArrows">
+        <a class="arrowleft" href="/faves"><img src="/assets/pngs/fav.png" alt=""></a>
+        <a class="arrowright" href="/pet"><img src="/assets/pngs/forward.png" alt=""></a>
+      </section>
+      <form autocomplete="off" class="filterForm" id="filterForm" action="index.html" method="post">
+        <p id="returnString">_</p>
+        <label class="subButton" for="zip">Zipcode</label>
+        <input type="text" class = "formImput" id = "zip" placeholder="Zip Code" minlength="1" maxlength="5" required>
 
-    <section class="image-wrapper">
-      <input type="image" src="/assets/pngs/yellowbone.png" id="submit" value="Submit"/>
+        <section class="image-wrapper">
+          <input type="image" src="/assets/pngs/yellowbone.png" id="submit" value="Submit"/>
+        </section>
+      </form>
+
     </section>
-  </form>
-  <section class="pawCss">
-    <img class ="pawBottom" src="/assets/pngs/pawprint_files/58af004d6c252499281ae910.png" alt="">
-  </section>
-</section>
 
-<section class="selectionPage tab-content" id="selectionPage">
-  <section class="splitArrows">
-    <a href="/"><img src="/assets/pngs/back.png" alt=""></a>
-    <a href="/faves"><img src="/assets/pngs/forward.png" alt=""></a>
-  </section>
-  <div class="wrap">
-      <!-- start jtinder container -->
-      <div id="tinderslide">
-          <ul id="liAppend">
+    <section class="selectionPage tab-content" id="selectionPage">
+      <section class="splitArrows">
+        <a class="arrowleft" href="/"><img src="/assets/pngs/back.png" alt=""></a>
+        <a class="arrowright" href="/faves"><img src="/assets/pngs/forward.png" alt=""></a>
+      </section>
+      <section class="alignPic">
+
+        <div class="wrap">
+          <!-- start jtinder container -->
+          <div id="tinderslide">
+            <ul id="liAppend">
               <li class="pane1">
-                  <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
+                <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
+                <div class="font">Fluffy</div>
+                <div class="like"></div>
+                <div class="dislike"></div>
               </li>
               <li class="pane1">
                 <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
+                <div class="font">Fluffy</div>
+                <div class="like"></div>
+                <div class="dislike"></div>
               </li>
               <li class="pane1">
                 <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
+                <div class="font">Fluffy</div>
+                <div class="like"></div>
+                <div class="dislike"></div>
               </li>
               <li class="pane1">
                 <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
+                <div class="font">Fluffy</div>
+                <div class="like"></div>
+                <div class="dislike"></div>
               </li>
               <li class="pane1">
                 <div class="img"><img class="img" src="http://photos.petfinder.com/photos/pets/32494369/1/?bust=1454357290&width=300&-pn.jpg" alt=""></div>
-                  <div class="font">Fluffy</div>
-                  <div class="like"></div>
-                  <div class="dislike"></div>
+                <div class="font">Fluffy</div>
+                <div class="like"></div>
+                <div class="dislike"></div>
               </li>
-          </ul>
+            </ul>
+            <div id="status"></div>
+          </div>
+        </section>
+
+        <div class="actions">
+          <a href="#" class="dislike" id="dislike"><i></i></a>
+          <a href="#" class="like" id="like"><i></i></a>
+        </div>
       </div>
 
-      <div class="actions">
-        <a href="#" class="dislike" id="dislike"><i></i></a>
-        <a href="#" class="like" id="like"><i></i></a>
-      </div>
-      <div id="status"></div>
-  </div>
+
+    </section>
+  </section>
+
+  <section class="faves tab-content" id="faves">
+    <section class="splitArrows">
+      <a class="arrowleft" href="/pet"><img src="/assets/pngs/back.png" alt=""></a>
+      <a id="home" href="#"><img  class="trashbottom" src="/assets/pngs/home.png" alt=""></a>
+      <a class="arrowright" id="clearall" href="#"><img src="/assets/pngs/trash.png" alt=""></a>
+    </section>
+    <section class="favesHead">
+      <h1 class="favestitle">Your Faves</h1>
+    </section>
+
+
+        <ul id="renderToFaves" class="flexfaves">
+
+        </ul>
+
+        <!-- <a id="totop" href="#"><img  class="trashbottom" src="/assets/pngs/uparrow.png" alt=""></a> -->
 
 
   </section>
-</section>
-
-<section class="faves tab-content">
-  <ul id="faves"></ul>
 
 
+  <footer>
 
-  <section >
-
-
-  </section>
-
-</section>
-
-
-<footer>
-
-</footer>
+  </footer>
 
 
 
-<script src="vendor/scripts/jquery-3.2.0.js" type="text/javascript"></script>
-<script src="/vendor/scripts/handlebars-v4.0.5.js" charset="utf-8"></script>
-<!-- transform2d lib -->
-<script type="text/javascript" src="/vendor/scripts/jquery.transform2d.js"></script>
+  <script src="vendor/scripts/jquery-3.2.0.js" type="text/javascript"></script>
+  <script src="/vendor/scripts/handlebars-v4.0.5.js" charset="utf-8"></script>
+  <!-- transform2d lib -->
+  <script type="text/javascript" src="/vendor/scripts/jquery.transform2d.js"></script>
 
-<!-- jTinder lib -->
-<script type="text/javascript" src="/vendor/scripts/jquery.jTinder.js"></script>
-<!-- <script src="/vendor/scripts/main.js" charset="utf-8"></script> -->
+  <!-- jTinder lib -->
+  <script type="text/javascript" src="/vendor/scripts/jquery.jTinder.js"></script>
+  <!-- <script src="/vendor/scripts/main.js" charset="utf-8"></script> -->
 
-<script src="controllers/petController.js"></script>
-<script src="controllers/favesController.js"></script>
-<script src="controllers/zipcodeController.js"></script>
-<script src="vendor/scripts/page.js"></script>
-<script src="controllers/routes.js" type="text/javascript"></script>
-<script src="/views/filterByZip.js" charset="utf-8"></script>
-<script src="views/PetView.js"></script>
-<script src="views/FavesView.js"></script>
-<script src="models/pet.js" type="text/javascript"></script>
-<script src="vendor/scripts/handlebars-v4.0.5.js"></script>
+
+  <!-- jTinder initialization script -->
+  <script type="text/javascript" src="/vendor/scripts/main.js"></script>
+  <script src="controllers/petController.js"></script>
+  <script src="views/FavesView.js"></script>
+  <script src="controllers/favesController.js"></script>
+  <script src="controllers/zipcodeController.js"></script>
+  <script src="vendor/scripts/page.js"></script>
+  <script src="controllers/routes.js" type="text/javascript"></script>
+  <script src="/views/filterByZip.js" charset="utf-8"></script>
+  <script src="models/pet.js" type="text/javascript"></script>
+  <script src="views/PetView.js"></script>
+  <script src="vendor/scripts/handlebars-v4.0.5.js"></script>
+
 
 </body>
 </html>

@@ -105,5 +105,8 @@
       localStorage.setItem('Likes', JSON.stringify(likes));
     }
 
-    module.Pets = Pets;
-  })(window);
+
+
+  module.Pets = Pets;
+})(window);
+
