@@ -2,11 +2,11 @@
 
 (module => {
 
-const Faves = {};
-Faves.all = [];
+  const Faves = {};
+  Faves.all = [];
 
 
-Faves.render = Handlebars.compile($('#favesTemplate').html());
+  Faves.render = Handlebars.compile($('#favesTemplate').html());
 
 Faves.renderFaves = () => {
    if(localStorage.getItem('Likes') === null){
