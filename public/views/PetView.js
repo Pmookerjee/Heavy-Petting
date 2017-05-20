@@ -11,6 +11,9 @@ toDom.renderToCards = ()=>{
   console.log("in render to cards");
   Pets.all.forEach(function(pet) {
     $('#liAppend').append(toDom.render(pet));
+    if(Pets.all.length === 1) {
+      Pets.requestPet(Pets.fetchByZipcode);
+    }
   });
 }
 

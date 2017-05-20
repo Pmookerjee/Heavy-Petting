@@ -6,11 +6,11 @@
 
     $('#submit').on('click', function(event) {
       event.preventDefault();
-      let zip = $('#zip').val();
-      if (/^[0-9]{5}$/.test(zip)) {
+      Pets.zip = $('#zip').val();
+      if (/^[0-9]{5}$/.test(Pets.zip)) {
         $('#returnString').text(' ');
-        console.log(zip);
-        Pets.requestPet(zip, Pets.fetchByZipcode);
+        console.log(Pets.zip);
+        Pets.requestPet(Pets.fetchByZipcode);
 
         page('/pet');
 
