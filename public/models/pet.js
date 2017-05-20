@@ -26,12 +26,12 @@
 
         for (var i = 0; i < length; i++){
           let shortDescrip = 'No description available', photoPlaceholder = 'assets/pngs/photoPlaceholder.png';
-            if(data.petfinder.pets.pet[i].description['$t']) {
-              shortDescrip = data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 50);
-            }
-            if(data.petfinder.pets.pet[i].media.photos) {
-              photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
-            }
+          if(data.petfinder.pets.pet[i].description['$t']) {
+            shortDescrip = data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 50);
+          }
+          if(data.petfinder.pets.pet[i].media.photos) {
+            photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
+          }
 
           //  let fullZip = data.petfinder.pets.pet[0].contact.zip['$t'];
           Pets.zip = Pets.zip.substr(0,3);
