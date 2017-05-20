@@ -22,6 +22,7 @@
   background-position: center;
   text-align: center;
 }
+
 .titleImg{
   width: 15em;
 }
@@ -97,6 +98,18 @@
   align-items: flex-end;
 }
 
+.empty-faves-pic {
+  padding: 1em 0 1em;
+  max-width: 75%;
+  width: 100%;
+}
+
+.empty-faves-text {
+  font-size: 2em;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
+
 .pawBottom{
   margin-right: 1em;
   margin-bottom: 1em;
@@ -145,6 +158,7 @@
   justify-content: space-around;
   align-content: center;
   align-items: center;
+}
 
 .sadpanda {
   margin: 0 auto;
@@ -204,6 +218,16 @@ footer{
     justify-content: space-around;
     align-content: center;
     align-items: center;
+  }
+  .empty-faves-pic {
+    max-width: 75%;
+    width: 100%;
+    padding: 2.7em 0 2.5em;
+  }
+
+  .empty-faves-text {
+    font-size: 4em;
+    text-align: center;
   }
 
   .filterForm {

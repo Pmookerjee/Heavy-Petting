@@ -5,13 +5,13 @@
     Object.keys(petInfo).forEach(key => this[key] = petInfo[key]);
   }
 
-  let count = 150;
+  let count = 100;
   Pets.zip = '';
   let viewed = [], likes = [];
 
   Pets.requestPet = (callback) => {
     Pets.all = [];
-    
+
     $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + Pets.zip + `&callback=?`)
     .done(function(data) {
       console.log( 'API request successful');
@@ -25,7 +25,7 @@
         let length = data.petfinder.pets.pet.length;
 
         for (var i = 0; i < length; i++){
-          let shortDescrip = 'No description available', photoPlaceholder = 'No Photo Available';
+          let shortDescrip = 'No description available', photoPlaceholder = 'assets/pngs/photoPlaceholder.png';
           if(data.petfinder.pets.pet[i].description['$t']) {
             shortDescrip = data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 50);
           }
@@ -76,18 +76,18 @@
       }
     };
 
- Pets.filterOutViewedPets =() => {
-   var viewed = [];
-    viewed = JSON.parse(localStorage.getItem('Viewed'));
-    let filteredSet = Pets.all.filter(pet => {
-      return (viewed.indexOf(pet.id) <0 );
-    })
-    return filteredSet;
- }
- 
- Pets.saveViewed = (petID) => {
-    if( localStorage.getItem('Viewed') !== null ){
-          viewed = JSON.parse(localStorage.getItem('Viewed'));
+    Pets.filterOutViewedPets =() => {
+      var viewed = [];
+      viewed = JSON.parse(localStorage.getItem('Viewed'));
+      let filteredSet = Pets.all.filter(pet => {
+        return (viewed.indexOf(pet.id) <0 );
+      })
+      return filteredSet;
+    }
+
+    Pets.saveViewed = (petID) => {
+      if( localStorage.getItem('Viewed') !== null ){
+        viewed = JSON.parse(localStorage.getItem('Viewed'));
       } else {
         viewed = [];
       }
@@ -105,8 +105,5 @@
       localStorage.setItem('Likes', JSON.stringify(likes));
     }
 
-
-
-  module.Pets = Pets;
-})(window);
-
+    module.Pets = Pets;
+  })(window);
