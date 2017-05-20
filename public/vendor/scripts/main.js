@@ -11,7 +11,7 @@ $("#tinderslide").jTinder({
       var petsAllIds = Pets.all[i].id;
       if (zipStringId === (Pets.all[i].id).toString()) {
         Pets.saveLike(Pets.all[i]);
-        Pets.saveViewed(Pets.all[i]);
+        Pets.saveViewed(Pets.all[i].id);
       }
     }
   },

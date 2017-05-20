@@ -38,6 +38,7 @@ $('#home').on('click', function(event){
 $(document).on('click', '.close', function(event){
   event.preventDefault();
   let petId = $(this).attr('id');
+  Pets.removeFromLikes(petID);
 });
 
 module.Faves = Faves;

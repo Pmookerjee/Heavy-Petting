@@ -95,6 +95,15 @@
       localStorage.setItem('Viewed', JSON.stringify(viewed));
     }
 
+    Pets.removeFromLikes = (petId) => {
+      likes = JSON.parse(localStorage.getItem('Likes'));
+      let filteredSet = likes.filter(like => {
+      return (like.id !== petId);
+      })
+      console.log('filteredset is ', filteredSet);
+      localStorage.setItem('Likes', JSON.stringify(filteredSet));
+    }
+
     Pets.saveLike = (petObj) => {
       if( localStorage.getItem('Likes') !== null ){
         likes = JSON.parse(localStorage.getItem('Likes'));
