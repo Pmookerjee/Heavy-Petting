@@ -21,6 +21,7 @@
   background-position: center;
   text-align: center;
 }
+
 .titleImg{
   width: 15em;
 }
@@ -94,6 +95,18 @@
   justify-content: flex-end;
   align-content: stretch;
   align-items: flex-end;
+}
+
+.empty-faves-pic {
+  padding: 1em 0 1em;
+  max-width: 80%;
+  width: 100%;
+}
+
+.empty-faves-text {
+  font-size: 2em;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
 }
 
 .pawBottom{
@@ -226,6 +239,16 @@ footer{
     justify-content: space-around;
     align-content: center;
     align-items: center;
+  }
+  .empty-faves-pic {
+    max-width: 78%;
+    width: 100%;
+    padding: 2.7em 0 2.5em;
+  }
+
+  .empty-faves-text {
+    font-size: 4em;
+    text-align: center;
   }
 
   .filterForm {
