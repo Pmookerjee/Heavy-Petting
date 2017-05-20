@@ -109,7 +109,7 @@
 
 .sadpanda {
   margin: 0 auto;
-  padding-left: 2em;
+  margin-left: 2em;
   border-radius: 2em 2em 2em 2em;
 }
 
@@ -120,6 +120,7 @@
   font-size: 1.5em;
   font-family: 'Indie Flower', cursive;
 }
+
 @media all and (min-width: 669px) {
   .wrap{
     margin-left: 21em;
