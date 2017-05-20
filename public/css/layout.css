@@ -99,7 +99,7 @@
 
 .empty-faves-pic {
   padding: 1em 0 1em;
-  max-width: 75%;
+  max-width: 80%;
   width: 100%;
 }
 
@@ -241,7 +241,7 @@ footer{
     align-items: center;
   }
   .empty-faves-pic {
-    max-width: 75%;
+    max-width: 78%;
     width: 100%;
     padding: 2.7em 0 2.5em;
   }

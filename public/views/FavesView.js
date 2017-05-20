@@ -35,6 +35,10 @@ $('#home').on('click', function(event){
   page('/');
 });
 
+$(document).on('click', '#close', function(event){
+  event.preventDefault();
+  console.log('this is ');
+});
 // $('#totop').on('click', function(event){
 //   $('html, body').animate({
 //        scrollTop: $(".favesHead").offset().top
