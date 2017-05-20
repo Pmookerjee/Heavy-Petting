@@ -160,6 +160,11 @@
 footer{
   height: 6em;
 }
+.close{
+  float: right;
+  height: 10%;
+  z-index: 10000000000;
+}
 
 @media all and (min-width: 669px) {
   .selectionPage {
@@ -192,7 +197,7 @@ footer{
   }
   .wrapfaves{
     margin-top: 3em;
-    height: 22vw;
+    height: 30vw;
     width: 23vw;
   }
 
