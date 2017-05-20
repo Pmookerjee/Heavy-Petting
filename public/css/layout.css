@@ -147,6 +147,12 @@
   align-items: center;
 }
 
+.trashbottom{
+  padding-left: 1em;
+  margin-top: 1em;
+}
+
+
 footer{
   height: 6em;
 }
