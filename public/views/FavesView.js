@@ -37,7 +37,7 @@ $('#home').on('click', function(event){
 
 $(document).on('click', '.close', function(event){
   event.preventDefault();
-  console.log($(this).attr('id'));
+  let petId = $(this).attr('id');
 });
 
 module.Faves = Faves;
