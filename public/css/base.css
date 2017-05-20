@@ -22,6 +22,12 @@ footer{
 
 .font{
   font-family: 'Indie Flower', cursive;
+
+}
+
+input {
+  outline: none;
+  text-decoration: none;
 }
 
 input {
@@ -37,9 +43,10 @@ input {
   background-color: rgb(046, 134, 171);
 }
 
-/*.wrapfaves{
-  background-color: rgb(046, 134, 171);
-}*/
+p{
+  font-family: 'Rasa', serif;
+  /*font-weight: bolder;*/
+}
 
 @media all and (min-width: 669px) {
   h1{

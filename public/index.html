@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Rasa" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Love at First Swipe</title>
-
   <script id="cardTemplate" type="text/x-handlebars-template">
     <li class="pane1" id="{{id}}">
       <div class="img"><img class="img" src="{{photo}}" alt=""></div>
@@ -20,7 +19,6 @@
       <div class="dislike"></div>
     </li>
   </script>
-
   <script id="favesTemplate" type="text/x-handlebars-template">
     <section class = "wrapfaves" id={{id}}>
       <section id="tinderslide">
@@ -43,28 +41,19 @@
       </section>
     </section>
   </script>
-
 </head>
-
-
-
 <body>
   <section class="wrapper">
     <header class="header">
-
       <img id="ink" class="inkcat" src="assets/pngs/inkcat.png" alt="">
       <section class="title">
         <h1 class="titleWords">Love at First Swipe</h1>
         <img class= "titleImg" src="assets/pngs/pawprint.png">
       </section>
       <img id="ink" class="inkdog" src="assets/pngs/inkdog.png" alt="">
-
     </header>
   </section>
-
   <section class="body">
-
-
     <section class="getStart tab-content" id="getStart">
       <section class="splitArrows">
         <a class="arrowleft" href="/faves"><img src="/assets/pngs/fav.png" alt=""></a>
@@ -74,21 +63,17 @@
         <p id="returnString">_</p>
         <label class="subButton" for="zip">Zipcode</label>
         <input type="text" class = "formImput" id = "zip" placeholder="Zip Code" minlength="1" maxlength="5" required>
-
         <section class="image-wrapper">
           <input type="image" src="/assets/pngs/yellowbone.png" id="submit" value="Submit"/>
         </section>
       </form>
-
     </section>
-
     <section class="selectionPage tab-content" id="selectionPage">
       <section class="splitArrows">
         <a class="arrowleft" href="/"><img src="/assets/pngs/back.png" alt=""></a>
         <a class="arrowright" href="/faves"><img src="/assets/pngs/forward.png" alt=""></a>
       </section>
       <section class="alignPic">
-
         <div class="wrap">
           <!-- start jtinder container -->
           <div id="tinderslide">
@@ -127,17 +112,13 @@
             <div id="status"></div>
           </div>
         </section>
-
         <div class="actions">
           <a href="#" class="dislike" id="dislike"><i></i></a>
           <a href="#" class="like" id="like"><i></i></a>
         </div>
       </div>
-
-
     </section>
   </section>
-
   <section class="faves tab-content" id="faves">
     <section class="splitArrows">
       <a class="arrowleft" href="/pet"><img src="/assets/pngs/back.png" alt=""></a>
@@ -147,31 +128,18 @@
     <section class="favesHead">
       <h1 class="favestitle">Your Faves</h1>
     </section>
-
-
     <ul id="renderToFaves" class="flexfaves">
-
     </ul>
-
   </section>
-
-
   <footer>
-
   </footer>
-
-
-
   <script src="vendor/scripts/jquery-3.2.0.js" type="text/javascript"></script>
   <script src="/vendor/scripts/handlebars-v4.0.5.js" charset="utf-8"></script>
   <!-- transform2d lib -->
   <script type="text/javascript" src="/vendor/scripts/jquery.transform2d.js"></script>
-
   <!-- jTinder lib -->
   <script type="text/javascript" src="/vendor/scripts/jquery.jTinder.js"></script>
   <!-- <script src="/vendor/scripts/main.js" charset="utf-8"></script> -->
-
-
   <!-- jTinder initialization script -->
   <script type="text/javascript" src="/vendor/scripts/main.js"></script>
   <script src="controllers/petController.js"></script>
@@ -184,7 +152,29 @@
   <script src="models/pet.js" type="text/javascript"></script>
   <script src="views/PetView.js"></script>
   <script src="vendor/scripts/handlebars-v4.0.5.js"></script>
+</section>
 
+<footer>
+</footer>
+<script src="vendor/scripts/jquery-3.2.0.js" type="text/javascript"></script>
+<script src="/vendor/scripts/handlebars-v4.0.5.js" charset="utf-8"></script>
+<!-- transform2d lib -->
+<script type="text/javascript" src="/vendor/scripts/jquery.transform2d.js"></script>
+
+<!-- jTinder lib -->
+<script type="text/javascript" src="/vendor/scripts/jquery.jTinder.js"></script>
+<!-- <script src="/vendor/scripts/main.js" charset="utf-8"></script> -->
+
+<script src="controllers/petController.js"></script>
+<script src="controllers/favesController.js"></script>
+<script src="controllers/zipcodeController.js"></script>
+<script src="vendor/scripts/page.js"></script>
+<script src="controllers/routes.js" type="text/javascript"></script>
+<script src="/views/filterByZip.js" charset="utf-8"></script>
+<script src="views/PetView.js"></script>
+<script src="views/FavesView.js"></script>
+<script src="models/pet.js" type="text/javascript"></script>
+<script src="vendor/scripts/handlebars-v4.0.5.js"></script>
 
 </body>
 </html>

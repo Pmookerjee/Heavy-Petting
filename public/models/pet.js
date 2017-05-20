@@ -95,7 +95,6 @@
     }
 
     Pets.removeFromLikes = (petId) => {
-      console.log('in the removeFromLikes');
       likes = JSON.parse(localStorage.getItem('Likes'));
       let filteredSet = likes.filter(like => {
       return (like.id !== petId);

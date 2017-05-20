@@ -2,11 +2,11 @@
 
 (module => {
 
-const Faves = {};
-Faves.all = [];
+  const Faves = {};
+  Faves.all = [];
 
 
-Faves.render = Handlebars.compile($('#favesTemplate').html());
+  Faves.render = Handlebars.compile($('#favesTemplate').html());
 
 Faves.renderFaves = () => {
   console.log('in renderFaves');
@@ -19,10 +19,13 @@ Faves.renderFaves = () => {
     } else {
       Faves.all = JSON.parse(localStorage.getItem('Likes'));
       Faves.all.forEach(fave => {
-      $('#renderToFaves').append(Faves.render(fave));
-  });
- }
-}
+        $('#renderToFaves').append(Faves.render(fave));
+      });
+    }
+  }
+
+// }
+//}
 
 $('#clearall').on('click', function(event){
   event.preventDefault();
@@ -44,5 +47,19 @@ $(document).on('click', '.close', function(event){
 });
 
 module.Faves = Faves;
+
+  $('#home').on('click', function(event){
+    event.preventDefault();
+    page('/');
+  });
+
+  $(document).on('click', '.close', function(event){
+    event.preventDefault();
+    let petId = $(this).attr('id');
+    Pets.removeFromLikes(petId);
+    location.reload();
+  });
+
+  module.Faves = Faves;
 
 })(window);

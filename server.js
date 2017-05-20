@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
-
 const PORT = process.env.PORT || 3000;
 const conString = process.env.DATABASE_URL || 'postgres://paulamookerjee@localhost:5432/pets';
 const client = new pg.Client(conString);
@@ -21,10 +20,10 @@ loadDB();
 app.get(`/pet/:zip`, function(request, response) {
   console.log('In the beginning of app.get - before request')
   client.query(`
-  SELECT * FROM animals
-  WHERE zipcode LIKE $1 || '%' LIMIT 100;`,
-  [ request.params.zip]
-)
+    SELECT * FROM animals
+    WHERE zipcode LIKE $1 || '%' LIMIT 100;`,
+    [ request.params.zip]
+  )
   .then(function(result) {
     console.log('successfully ran query - in the server')
     response.send(result.rows);
@@ -62,7 +61,7 @@ app.post('/pet', function(request, response) {
 function loadDB() {
   client.query(`
     CREATE TABLE IF NOT EXISTS
-     animals (
+    animals (
       id VARCHAR(255) UNIQUE,
       animal VARCHAR(255),
       breed VARCHAR(255),
