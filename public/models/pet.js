@@ -37,6 +37,31 @@
           Pets.zip = Pets.zip.substr(0,3);
           console.log('zipcode substr in requestPet is: ', Pets.zip);
 
+    $.getJSON(`https://api.petfinder.com/pet.find?format=json&key=9aa57d3d06acb88bfca2fd92d0eedb34&output=basic&count=` + count + `&offset=` + count + `&location=` + Pets.zip + `&callback=?`)
+    .done(function(data) {
+      console.log( 'API request successful');
+      console.log(data);
+
+      /*******IF THERE ARE NO OBJECTS FOR THAT ZIPCODE:********/
+      if(!data.petfinder.pets) {
+        $('#liAppend').append(`<img class="sadpanda" src="../assets/pngs/sadpanda.jpg"></img`)
+        $('#liAppend').append(`<p class="sadpanda_text">Sorry, there are no nearby pets in that zipcode :(</p>`)
+      } else {
+        let length = data.petfinder.pets.pet.length;
+
+        for (var i = 0; i < length; i++){
+          let shortDescrip = 'No description available', photoPlaceholder = 'No Photo Available';
+          if(data.petfinder.pets.pet[i].description['$t']) {
+            shortDescrip = data.petfinder.pets.pet[i].description['$t'].replace(/\r?\n|\r/g, ', ').substr(0, 50);
+          }
+          if(data.petfinder.pets.pet[i].media.photos) {
+            photoPlaceholder = data.petfinder.pets.pet[i].media.photos.photo[3]['$t'];
+          }
+
+          //  let fullZip = data.petfinder.pets.pet[0].contact.zip['$t'];
+          Pets.zip = Pets.zip.substr(0,3);
+          console.log('zipcode substr in requestPet is: ', Pets.zip);
+
           $.post('/pet', {
             id: data.petfinder.pets.pet[i].id['$t'].toString(),
             animal: data.petfinder.pets.pet[i].animal['$t'],

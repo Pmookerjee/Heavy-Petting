@@ -22,6 +22,12 @@ footer{
 
 .font{
   font-family: 'Indie Flower', cursive;
+
+}
+
+input {
+  outline: none;
+  text-decoration: none;
 }
 
 input {

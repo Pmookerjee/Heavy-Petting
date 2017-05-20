@@ -3,7 +3,6 @@
 ((module)=>{
   const filter = {};
 
-
   $('#submit').on('click', function(event) {
     event.preventDefault();
     Pets.zip = $('#zip').val();
@@ -11,7 +10,6 @@
       $('#returnString').text(' ');
       console.log(Pets.zip);
       Pets.requestPet(Pets.fetchByZipcode);
-
       page('/pet');
 
       $('ul').children().remove();
@@ -20,7 +18,6 @@
     }
   })
   
-
   // got the zips
   module.filter = filter;
 })(window);

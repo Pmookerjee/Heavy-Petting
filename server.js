@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
-
 const PORT = process.env.PORT || 3000;
 const conString = process.env.DATABASE_URL || 'postgres://paulamookerjee@localhost:5432/pets';
 const client = new pg.Client(conString);
