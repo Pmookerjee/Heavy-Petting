@@ -17,3 +17,123 @@
   visibility: visible;
   opacity: 1;
 }
+
+
+footer {
+  background-color: #73a5b6;
+}
+
+header {
+  background-color: #e2da99;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  width: initial;
+  padding: 40px 15px 40px 15px;
+}
+
+.wrapper {
+  width: initial;
+}
+
+header div {
+  padding: 10px;
+}
+
+.left-header, .right-header {
+  width: 105px;
+}
+
+.body {
+  background-color: #e2da99;
+}
+
+.fence {
+  background-image: url(../assets/pngs/fence.png);
+  background-repeat: repeat-x;
+  position: relative;
+  background-size: 6em;
+  height: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.center-header {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.splitArrows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.filterForm {
+  padding-top: 20%;
+}
+
+.formImput {
+  border: 7px solid #73a5b6;
+}
+
+.image-wrapper {
+  margin-top: 1.6em;
+}
+
+.left-arrow {
+  margin-left: 20px;
+}
+
+.right-arrow {
+  margin-right: 20px;
+}
+
+.fa-home, .fa-trash, .fa-chevron-circle-left, .fa-chevron-circle-right, .fa-star {
+  font-size: 65px;
+  color: #000;
+}
+
+.faves {
+  background-color: #73a5b6;
+}
+
+img#ink {
+  width: 105px;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .right-header, .left-header {
+    display: none;
+  }
+
+  .titleWords {
+    text-align: center;
+  }
+  header {
+    padding: 20px 5px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  header div {
+    padding: 20px;
+  }
+}
